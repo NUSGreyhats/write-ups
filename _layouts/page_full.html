@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include head.html %}
+    </head>
+
+    <body>
+        <nav class="main-nav-outer" id="navi"><!--main-nav-start-->
+            {% include nav.html %}
+        </nav><!--main-nav-end-->
+        <section class="margin">
+            <div class="content full">
+                <div class="content_container">
+                    <article>
+                        {% if page.featimg %}
+                            <img class="featimg" src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ page.featimg }}" alt="{{ page.featimg }}">
+                        {% endif %}
+
+                        <h1 class="page_title">
+                            {{ page.title }}
+                        </h1>
+                        <div class="post_content">
+                            {{ content }}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        {% include footer.html %}
+    </body>
+</html>

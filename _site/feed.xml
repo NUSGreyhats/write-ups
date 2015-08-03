@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>NUS GreyHats</title>
+		<description>NUS GreyHats is a newly formed special interest group designed to spark students&#39; interest in information security and advance the level of security proficiency towards the aim of contributing to the growing need for cyber defenders in the government and private sectors.</description>
+		<link>http://www.nusgreyhats.org/</link>
+		<atom:link href="http://www.nusgreyhats.org//feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>POLICTF 2015 Write Up - John the Traveller (Web)</title>
+				
+				
+					<description>&lt;div class=&quot;holder&quot;&gt;   
+                &lt;div class=&quot;title&quot;&gt;Polictf 2015 Writeup - JOHN THE TRAVELLER (Web)&lt;/div&gt;
+				
+				&lt;p&gt;
+					Holidays are here! But John still hasn&#39;t decided where to spend them and time is running out: flights are overbooked and prices are rising every second. Fortunately, John just discovered a website where he can book last second flight to all the European capitals; however, there&#39;s no time to waste, so he just grabs his suitcase and thanks to his new smartphone he looks the city of his choice up while rushing to the airport. There he goes! Flight is booked so... hauskaa lomaa! &lt;br /&gt;&lt;br /&gt;
+					&lt;a href=&quot;http://traveller.polictf.it/&quot;&gt;http://traveller.polictf.it/&lt;/a&gt;
+				&lt;/p&gt;
+				&lt;hr /&gt;
+	
+				&lt;p&gt;
+					We visited the site and saw the following page. &lt;br /&gt;&lt;br /&gt;
+					&lt;/p&gt;&lt;center&gt;&lt;img src=&quot;/write-ups/img/travellersite.JPG&quot; width=&quot;50%&quot; height=&quot;50%&quot; /&gt;&lt;/center&gt;
+				&lt;p&gt;&lt;/p&gt;
+				&lt;br /&gt;
+				&lt;p&gt;
+				We tried to key into some arbitrary city, however, it returns back the same page. Looking back at the challenge description, we noticed something that stands out - &lt;b&gt;hauskaa lomaa&lt;/b&gt;. A search revealed that these two words is actually Finnish. We also found out that the capital of Finland is &lt;b&gt;Helsinki&lt;/b&gt;. Entering that into the search field and we got ....
+					&lt;br /&gt;&lt;br /&gt;
+					&lt;/p&gt;&lt;center&gt;&lt;img src=&quot;/write-ups/img/helsinki.JPG&quot; width=&quot;75%&quot; height=&quot;75%&quot; /&gt;&lt;/center&gt;
+				&lt;p&gt;&lt;/p&gt;
+				
+				&lt;br /&gt;
+				&lt;p&gt;
+					Great. So the next step is to try and book the ticket. But how do we do so? The price is in px. Does it mean pixels?  The challenge also mentioned &quot;he just grabs his suitcase and thanks to his new smartphone&quot;. Let&#39;s try to adjust our browser size to one of the pixel size using Chrome browser dev tools. 
+					&lt;br /&gt;&lt;br /&gt;
+					&lt;/p&gt;&lt;center&gt;&lt;img src=&quot;/write-ups/img/devtools.JPG&quot; width=&quot;25%&quot; height=&quot;25%&quot; /&gt;&lt;/center&gt;
+				&lt;p&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+</description>
+				
+				<pubDate>Mon, 03 Aug 2015 00:00:00 +0800</pubDate>
+				<link>http://www.nusgreyhats.org//polictf-2015-write-up-john-the-traveller-(web)/</link>
+				<guid isPermaLink="true">http://www.nusgreyhats.org//polictf-2015-write-up-john-the-traveller-(web)/</guid>
+			</item>
+		
+	</channel>
+</rss>

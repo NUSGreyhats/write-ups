@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+<title>{{ site.name }}{% if page.title %} - {{ page.title }} {% endif%}</title>
+{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+<meta name="viewport" content="width=device-width, maximum-scale=1">
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:500,600' rel='stylesheet' type='text/css'>
+
+
+<link href="{{ site.baseurl | replace: '//', '/' }}/css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{{ site.baseurl | replace: '//', '/' }}/css/main.css">
+<link rel="stylesheet" id="switch_style" href="{{ site.baseurl | replace: '//', '/' }}/css/grid.css">
+<link href="{{ site.baseurl | replace: '//', '/' }}/css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="{{ site.baseurl | replace: '//', '/' }}/css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="{{ site.baseurl | replace: '//', '/' }}/css/responsive.css" rel="stylesheet" type="text/css">
+<link href="{{ site.baseurl | replace: '//', '/' }}/css/animate.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.baseurl | prepend: site.url | replace: '//', '/' }}/feed.xml">
+
+<link rel="icon" href="{{ site.url  }}img/icon.png" type="image/png">
+
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
+
+<!--[if IE]><style type="text/css">.pie {behavior:url({{ site.url}}PIE.htc);}</style><![endif]-->
+
+<script type="text/javascript" src="{{ site.baseurl | replace: '//', '/' }}/js/jquery.1.8.3.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl | replace: '//', '/' }}/js/bootstrap.js"></script>
+<script type="text/javascript" src="{{ site.baseurl | replace: '//', '/' }}/js/jquery-scrolltofixed.js"></script>
+<script type="text/javascript" src="{{ site.baseurl | replace: '//', '/' }}/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="{{ site.baseurl | replace: '//', '/' }}/js/jquery.isotope.js"></script>
+<script type="text/javascript" src="{{ site.baseurl | replace: '//', '/' }}/js/wow.js"></script>
+<script type="text/javascript" src="{{ site.baseurl | replace: '//', '/' }}/js/classie.js"></script>
+
+
+<!--[if lt IE 9]>
+<script src="{{ site.baseurl | replace: '//', '/' }}/js/respond-1.1.0.min.js"></script>
+<script src="{{ site.baseurl | replace: '//', '/' }}/js/html5shiv.js"></script>
+<script src="{{ site.baseurl | replace: '//', '/' }}/js/html5element.js"></script>
+<![endif]-->
