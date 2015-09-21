@@ -7,6 +7,35 @@
 		<atom:link href="http://www.nusgreyhats.org//feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Capture The Flag 101 Workshop</title>
+				
+				
+					<description>&lt;center&gt;&lt;img src=&quot;/img/thectf.jpg&quot; width=&quot;50%&quot; height=&quot;50%&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;
+NUS Greyhats Capture The Flag 101 is a capture-the-flag (CTF) style workshop that will be spanned over two Saturdays. Participants will learn techniques and tools to exploit software vulnerabilities to uncover secret flags hidden in various challenge. This workshop is designed to be progressive and is beginner friendly. In addition, we will have a live CTF scoreboard to show your ranking :)  
+&lt;/p&gt;
+&lt;p&gt;
+You can sign up for the event &lt;a href=&quot;https://docs.google.com/forms/d/1ppvnaRWzhwuSZ60CIKem4E37eyLQMbfltEw_xmutMBU/&quot;&gt;here&lt;/a&gt; (while stocks last).
+&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;Date:&lt;/b&gt; 15 and 22 August 2015&lt;br /&gt;
+&lt;b&gt;Time:&lt;/b&gt; 1PM - 5PM&lt;br /&gt;
+&lt;b&gt;Venue:&lt;/b&gt; School of Computing COM 1 Seminar Room 3 &lt;br /&gt;
+(Registration from 12.30PM onwards)
+&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;15 August 2015&lt;/b&gt;&lt;br /&gt;
+This session will focus on systems security which includes topics in source code auditing, representation of code as data, exploitation of insecure scripts, exploitation of format string bugs, and exploitation of memory corruption bugs.
+&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Sun, 09 Aug 2015 00:00:00 +0800</pubDate>
+				<link>http://www.nusgreyhats.org//Capture-The-Flag-101-Workshop/</link>
+				<guid isPermaLink="true">http://www.nusgreyhats.org//Capture-The-Flag-101-Workshop/</guid>
+			</item>
+		
+			<item>
 				<title>POLICTF 2015 Write Up - John the Traveller (Web)</title>
 				
 				
