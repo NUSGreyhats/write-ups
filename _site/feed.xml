@@ -10,7 +10,7 @@
 				<title>Capture The Flag 101 Workshop</title>
 				
 				
-					<description>&lt;center&gt;&lt;img src=&quot;/img/thectf.jpg&quot; width=&quot;50%&quot; height=&quot;50%&quot; /&gt;&lt;/center&gt;
+					<description>&lt;center&gt;&lt;img src=&quot;/write-ups/img/thectf.jpg&quot; width=&quot;50%&quot; height=&quot;50%&quot; /&gt;&lt;/center&gt;
 &lt;p&gt;
 NUS Greyhats Capture The Flag 101 is a capture-the-flag (CTF) style workshop that will be spanned over two Saturdays. Participants will learn techniques and tools to exploit software vulnerabilities to uncover secret flags hidden in various challenge. This workshop is designed to be progressive and is beginner friendly. In addition, we will have a live CTF scoreboard to show your ranking :)  
 &lt;/p&gt;
@@ -40,8 +40,6 @@ This session will focus on systems security which includes topics in source code
 				
 				
 					<description>&lt;div class=&quot;holder&quot;&gt;   
-                &lt;div class=&quot;title&quot;&gt;Polictf 2015 Writeup - JOHN THE TRAVELLER (Web)&lt;/div&gt;
-				
 				&lt;p&gt;
 					Holidays are here! But John still hasn&#39;t decided where to spend them and time is running out: flights are overbooked and prices are rising every second. Fortunately, John just discovered a website where he can book last second flight to all the European capitals; however, there&#39;s no time to waste, so he just grabs his suitcase and thanks to his new smartphone he looks the city of his choice up while rushing to the airport. There he goes! Flight is booked so... hauskaa lomaa! &lt;br /&gt;&lt;br /&gt;
 					&lt;a href=&quot;http://traveller.polictf.it/&quot;&gt;http://traveller.polictf.it/&lt;/a&gt;

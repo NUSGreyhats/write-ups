@@ -170,7 +170,6 @@ color: #fff;
 .main-nav-outer{
 	padding:0px;
 	border-bottom:1px solid #dddddd;
-	box-shadow:0 4px 5px -3px #ececec;
 	position:relative;
 	background:#fff;
 }
@@ -191,7 +190,7 @@ color: #fff;
 	font-family: 'Montserrat', sans-serif;
 	text-decoration: none;
 	line-height:20px;
-	margin:5px 32px;
+	margin:0px 32px;
 	transition:all 0.3s ease-in-out;
 	-moz-transition:all 0.3s ease-in-out;
 	-webkit-transition:all 0.3s ease-in-out;
