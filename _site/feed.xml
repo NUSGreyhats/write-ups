@@ -10,35 +10,36 @@
 				<title>TrendMicroCTF - 500 Captchas! (Misc 300)</title>
 				
 				
-					<description>&lt;h2&gt;Welcome to Captcha Challenge!&lt;/h2&gt;
+					<description>&lt;h1&gt;Welcome to Captcha Challenge!&lt;/h1&gt;
 &lt;p&gt;The challenge description was a website, upon entering the website, you are allowed to register/sign in.&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;
-  After registering and logging in, you are shown a captcha, and it seems that the challenge was to solve 500 consecutive captchas without any mistakes. However, it seems that you are able to skip captchas by refreshing the page (this turned out to be very useful).&lt;br /&gt;&lt;br /&gt;
-  Captchas looks like this:
+	After registering and logging in, you are shown a captcha, and it seems that the challenge was to solve 500 consecutive captchas without any mistakes. However, it seems that you are able to skip captchas by refreshing the page (this turned out to be very useful).&lt;br /&gt;&lt;br /&gt;
+	Captchas looks like this:
 &lt;/p&gt;
 &lt;center&gt;&lt;img src=&quot;/write-ups/img/res/captcha.png&quot; width=&quot;30%&quot; height=&quot;30%&quot; /&gt;&lt;img src=&quot;/write-ups/img/res/captcha2.png&quot; width=&quot;30%&quot; height=&quot;30%&quot; /&gt;&lt;/center&gt;
 &lt;p&gt;
-  To automatically solve all 500 captchas, we wrote a python script using the Python Imaging Library. The trick to solving the captchas was to do some pre-processing and to build a dataset of good characters which we will be using to solve new captchas.	
-  &lt;br /&gt;
-  &lt;h3&gt;Processing&lt;/h3&gt;
-  &lt;b&gt;Turn background/noise to white, and text to black&lt;/b&gt;
-  &lt;p&gt;Scan the entire picture and rank the colours by frequency, the background colour would have the highest frequency followed by the text&lt;/p&gt;
+	To automatically solve all 500 captchas, we wrote a python script using the Python Imaging Library. The trick to solving the captchas was to do some pre-processing and to build a dataset of good characters which we will be using to solve new captchas.	
+	&lt;br /&gt;
+	&lt;h3&gt;Processing&lt;/h3&gt;
+	&lt;b&gt;Turn background/noise to white, and text to black&lt;/b&gt;
+	&lt;p&gt;Scan the entire picture and rank the colours by frequency, the background colour would have the highest frequency followed by the text&lt;/p&gt;
 &lt;/p&gt;
 &lt;center&gt;&lt;img src=&quot;/write-ups/img/res/processed.jpg&quot; width=&quot;30%&quot; height=&quot;30%&quot; /&gt;&lt;/center&gt;
 &lt;p&gt;
-  &lt;b&gt;Dynamically slice the image by characters&lt;/b&gt;
-  &lt;p&gt;For each X coordinate, if the Y coordinates along the X coordinate has a black pixel:&lt;br /&gt;
-    set inLetter = true&lt;br /&gt;
-    Keep going along X until you reach a X where there is no black pixel along it, then you have your starting and ending x coordinate for your character!&lt;/p&gt;
-    &lt;pre&gt;for y in range(im2.size[0]): # slice across
-      for x in range(im2.size[1]): # slice down
+	&lt;b&gt;Dynamically slice the image by characters&lt;/b&gt;
+	&lt;p&gt;For each X coordinate, if the Y coordinates along the X coordinate has a black pixel:&lt;br /&gt;
+  		set inLetter = true&lt;br /&gt;
+Keep going along X until you reach a X where there is no black pixel along it, then you have your starting and ending x coordinate for your character!
+&lt;/p&gt;
+&lt;pre&gt;for y in range(im2.size[0]): # slice across
+    for x in range(im2.size[1]): # slice down
       pix = im2.getpixel((y,x))
       if pix != 255:
-      inletter = True
-      last = y
-      if foundletter == False and inletter == True:
+        inletter = True
+        last = y
+    if foundletter == False and inletter == True:
       foundletter = True
       start = y
 
