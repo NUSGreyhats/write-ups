@@ -6,12 +6,9 @@ description: TrendMicro CTF 2015 Miscellaneous 300. Solve 500 Captchas.
 tags: [CTF, MISC, CAPTCHA, TRENDMICRO]
 category: [CTF, MISC, CAPTCHA]
 --- 
-<p>
-  <h1>Welcome to Captcha Challenge!</h1>
+<h2>Welcome to Captcha Challenge!</h2>
   The challenge description was a website, upon entering the website, you are allowed to register/sign in.
-</p>
 <hr/>
-
 <p>
   After registering and logging in, you are shown a captcha, and it seems that the challenge was to solve 500 consecutive captchas without any mistakes. However, it seems that you are able to skip captchas by refreshing the page (this turned out to be very useful).<br><br>
   Captchas looks like this:
@@ -161,7 +158,7 @@ category: [CTF, MISC, CAPTCHA]
         def main():
         img= Image.open("image.png")
         print crack(img)
-        
+
         if __name__ == "__main__":
         main()</pre>
         To achieve a 100% accuracy, we need to reject certain solutions that contains risk, to do this, we reject a solution if any of the characters has a similarity score that is less that 0.99. With this, we were able to achieve a 100% accuracy with a rejection rate of ~1 per captcha.
