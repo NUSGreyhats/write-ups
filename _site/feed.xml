@@ -7,6 +7,131 @@
 		<atom:link href="http://www.nusgreyhats.org/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>TrendMicroCTF - VirusClicker (Offensive 200)</title>
+				
+				
+					<description>&lt;h2&gt;Click Button! Attack Virus!&lt;/h2&gt;
+&lt;p&gt;&lt;b&gt;Points:&lt;/b&gt; 200 &lt;b&gt;Category:&lt;/b&gt; Offensive &lt;b&gt;Description:&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;a href=&quot;/write-ups/resources/VirusClicker.apk&quot;&gt;VirusClicker&lt;/a&gt;&lt;br /&gt;
+MD5: 1a0462c2bc27bdd3a5045036c36c3e31&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h1&gt;Solution&lt;/h1&gt;
+&lt;p&gt;
+	After downloading the APK and installing it on my BlueStacks Emulator, you see this screen that requires us to press on the button for 10&#39;000&#39;000 times...
+&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/write-ups/img/res/virusclicker.png&quot; height=&quot;300px&quot; /&gt;&lt;img src=&quot;/write-ups/img/res/10mclicks.png&quot; height=&quot;300px&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;
+	We first use apktool to decompile the apk into the respective smali code. &lt;br /&gt;
+	&lt;img src=&quot;/write-ups/img/res/apkdecode.png&quot; width=&quot;50%&quot; height=&quot;50%&quot; /&gt;&lt;br /&gt;
+	The part of the code that we&#39;re interested in is the onTouchEvent that is called on every press.
+&lt;/p&gt;
+&lt;pre&gt;
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 4
+    const/4 v3, 0x1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;-&amp;gt;getAction()I
+    move-result v0
+    packed-switch v0, :pswitch_data_0
+    :cond_0
+    :goto_0
+    return v3
+    :pswitch_0
+    iput-boolean v3, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;h:Z
+    goto :goto_0
+    :pswitch_1
+    const/4 v0, 0x0
+    iput-boolean v0, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;h:Z
+    iget v0, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;g:I
+    add-int/lit8 v0, v0, 0x1
+    iput v0, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;g:I
+    invoke-static {}, Lcom/tm/ctf/clicker/a/a;-&amp;gt;b()V
+    const/16 v0, 0xeb9
+    iget v1, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;g:I
+    if-eq v0, v1, :cond_1
+    const/16 v0, 0x2717
+    iget v1, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;g:I
+    if-eq v0, v1, :cond_1
+    const v0, 0xe767
+    iget v1, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;g:I
+    if-eq v0, v1, :cond_1
+    const v0, 0x186a3
+    iget v1, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;g:I
+    if-eq v0, v1, :cond_1
+    const v0, 0x78e75
+    iget v1, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;g:I
+    if-eq v0, v1, :cond_1
+    const v0, 0xf4243
+    iget v1, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;g:I
+    if-eq v0, v1, :cond_1
+    const v0, 0x98967f
+    iget v1, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;g:I
+    if-ne v0, v1, :cond_2
+    :cond_1
+    new-instance v0, Landroid/content/Intent;
+    const-string v1, &quot;com.tm.ctf.clicker.SCORE&quot;
+    invoke-direct {v0, v1}, Landroid/content/Intent;-&amp;gt;&amp;lt;init&amp;gt;(Ljava/lang/String;)V
+    const-string v1, &quot;SCORE&quot;
+    iget v2, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;g:I
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;-&amp;gt;putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    iget-object v1, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;a:Landroid/content/Context;
+    invoke-virtual {v1, v0}, Landroid/content/Context;-&amp;gt;sendBroadcast(Landroid/content/Intent;)V
+    :cond_2
+    const v0, 0x989680
+    iget v1, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;g:I
+    if-gt v0, v1, :cond_0
+    invoke-static {}, Landroid/os/Message;-&amp;gt;obtain()Landroid/os/Message;
+    move-result-object v0
+    new-instance v1, Ljava/lang/StringBuilder;
+    iget-object v2, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;q:Ljava/lang/String;
+    invoke-static {v2}, Ljava/lang/String;-&amp;gt;valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v2
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-&amp;gt;&amp;lt;init&amp;gt;(Ljava/lang/String;)V
+    const-string v2, &quot;Jh&quot;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;-&amp;gt;append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;-&amp;gt;toString()Ljava/lang/String;
+    move-result-object v1
+    iput-object v1, v0, Landroid/os/Message;-&amp;gt;obj:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/tm/ctf/clicker/activity/c;-&amp;gt;b:Landroid/os/Handler;
+    invoke-virtual {v1, v0}, Landroid/os/Handler;-&amp;gt;sendMessage(Landroid/os/Message;)Z
+    goto :goto_0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+	.end method 
+&lt;/pre&gt;
+&lt;p&gt;
+	From the code, we can see that something will happen after we hit 0x989680 (10&#39;000&#39;000) clicks.&lt;br /&gt;
+	Also, it seems that there are &quot;mini-checkpoints&quot; that you&#39;re suppose to hit at 0xeb9, 0x2717, 0xe767, 0x186a3, 0x78e75, 0xf4243, 0x98967f. What I am going to do is to patch the APK such that upon the first touch event, I am going to invoke all the necessary instructions to show me the flag.
+&lt;/p&gt;
+&lt;pre&gt;
+	const v0, 0x989680
+    const v1, 0x989680
+    if-gt v0, v1, :cond_0
+&lt;/pre&gt;
+&lt;p&gt;
+	The same for all the &quot;mini-checkpoints&quot;. &lt;br /&gt;
+	We then use apktool to recompile the smali code back to .apk and then use jarsigner to sign it with a key we generated.&lt;br /&gt;
+	&lt;img src=&quot;/write-ups/img/res/apksign.png&quot; /&gt;&lt;br /&gt;&lt;br /&gt;
+	We then install the &quot;patched&quot; apk onto the BlueStacks emulator and tada! We got the flag!
+&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/write-ups/img/res/virusflag.png&quot; height=&quot;300px&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+	&lt;b&gt;TMCTF{Congrats_10MClicks}&lt;/b&gt;
+&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Thu, 08 Oct 2015 00:00:00 +0800</pubDate>
+				<link>http://www.nusgreyhats.org/TrendMicroCTF-VirusClicker-(Offensive-200)/</link>
+				<guid isPermaLink="true">http://www.nusgreyhats.org/TrendMicroCTF-VirusClicker-(Offensive-200)/</guid>
+			</item>
+		
+			<item>
 				<title>TrendMicroCTF - 500 Captchas! (Misc 300)</title>
 				
 				

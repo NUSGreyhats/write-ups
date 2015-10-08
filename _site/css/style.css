@@ -1,6 +1,11 @@
 @charset "utf-8";
 /* CSS Document */
 
+code {
+	white-space: pre !important;
+	display:block !important;
+}
+
 /* Float Elements 
 ---------------------------------*/
 .fl-lt {float:left;}
