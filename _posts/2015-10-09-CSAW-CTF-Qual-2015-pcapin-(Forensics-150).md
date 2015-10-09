@@ -44,7 +44,7 @@ god.pcapng
 malware.exe
 </pre>
 
-{% highlight python linenos %}
+{% highlight python linenos=table %}
 for cipher in response1:
 	key = request1.split(":")
 	key = key[6:]
@@ -75,7 +75,7 @@ Looking deeper, we realize that f9+45+1 = 13f -> 3f and e9+67=150 -> 50. Again v
 <p>A s1mp!3_n37w0rk_c4@113nge that was not simple at all!</p>
 
 
-{% highlight python linenos %}
+{% highlight python linenos=table %}
 for cipher in response2:
     cipher = cipher.split(":")
 
@@ -107,4 +107,4 @@ file.write(hb)
 file.close()
 {% endhighlight %}
 
-<p>Click [here]({{ site.url }}/resources/wu/csaw2015/pcapin_data_raw.txt) for the raw data found in the pcap.</p>
+<p>Click [here]({{ site.url }}/write-ups/resources/wu/csaw2015/pcapin_data_raw.txt) for the raw data found in the pcap.</p>

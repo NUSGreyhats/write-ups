@@ -19,36 +19,42 @@ The challenge description was a website, upon entering the website, you are allo
 	<br>
 	<h3>Processing</h3>
 	<b>Turn background/noise to white, and text to black</b>
-	<p>Scan the entire picture and rank the colours by frequency, the background colour would have the highest frequency followed by the text</p>
+	Scan the entire picture and rank the colours by frequency, the background colour would have the highest frequency followed by the text
 </p><center><img src="/write-ups/img/res/processed.jpg" width="30%" height="30%"></center>
 <p>
 	<b>Dynamically slice the image by characters</b>
-	<p>For each X coordinate, if the Y coordinates along the X coordinate has a black pixel:<br/>
-  		set inLetter = true<br/>
-Keep going along X until you reach a X where there is no black pixel along it, then you have your starting and ending x coordinate for your character!
+  For each X coordinate, if the Y coordinates along the X coordinate has a black pixel:<br/>
+  set inLetter = true<br/>
+  Keep going along X until you reach a X where there is no black pixel along it, then you have your starting and ending x coordinate for your character!
 </p>
-<pre>for y in range(im2.size[0]): # slice across
-    for x in range(im2.size[1]): # slice down
-      pix = im2.getpixel((y,x))
-      if pix != 255:
-        inletter = True
-        last = y
-    if foundletter == False and inletter == True:
-      foundletter = True
-      start = y
 
-    if foundletter == True and inletter == False:
-      end = y
-      if end-last > 3 and end-start > 20:
-        foundletter=False
-        letters.append((start-3,end))
-    inletter=False</pre>
+{% highlight python linenos=table %}
+for y in range(im2.size[0]): # slice across
+  for x in range(im2.size[1]): # slice down
+    pix = im2.getpixel((y,x))
+    if pix != 255:
+      inletter = True
+      last = y
+  if foundletter == False and inletter == True:
+    foundletter = True
+    start = y
+
+  if foundletter == True and inletter == False:
+    end = y
+    if end-last > 3 and end-start > 20:
+      foundletter=False
+      letters.append((start-3,end))
+  inletter=False
+{% endhighlight %}
+<p>
     With that, you can build a dataset of characters to use for comparison:
 </p><center><img src="/write-ups/img/res/dataset.png" width="25%" height="25%"></center>
 <p>
 	So now, we process new captchas similarly, and slice them up into characters for comparison with our dataset.<br/>
 	The code for comparison is as follows:
-	<pre>
+</p>
+
+{% highlight python linenos=table %}
 class VectorCompare:
   def magnitude(self,concordance):
     total = 0
@@ -162,7 +168,9 @@ def main():
   print crack(img)
   
 if __name__ == "__main__":
-    main()</pre>
+    main()
+{% endhighlight %}
+<p>
   To achieve a 100% accuracy, we need to reject certain solutions that contains risk, to do this, we reject a solution if any of the characters has a similarity score that is less that 0.99. With this, we were able to achieve a 100% accuracy with a rejection rate of ~1 per captcha.
   <center><img src="/write-ups/img/res/captcharesults.png" width="50%" height="50%"></center>
   </br>
