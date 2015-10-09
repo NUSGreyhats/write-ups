@@ -107,4 +107,4 @@ file.write(hb)
 file.close()
 {% endhighlight %}
 
-<p>Click [here]({{ site.url }}/resources/wu/csaw2015/pcapin_data_raw.txt) for the raw data found in the pcap.</p>
+<p>Click <a href="/write-ups/resources/wu/csaw2015/pcapin_data_raw.txt">here</a> for the raw data found in the pcap.</p>
