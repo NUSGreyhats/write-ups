@@ -95,6 +95,25 @@
     <div class="content_container">
     <article>
         <h2 class="post_title">
+            <a href="/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/">ASIS CTF Finals 2015 - Ultra Compression (Web 125)</a>
+        </h2>
+        <span class="date">
+            Published on October 12, 2015
+        </span>
+        
+            
+        
+        <div class="post_content">
+            <h1 id="ultra-compression">ultra compression</h1> <p><strong>Points:</strong>125<br /> <strong>Category:</strong> Web<br /> Go <a href="http://ucs.asis-ctf.ir/">there</a> and find the flag.</p> <hr /> <p>Here we are told to go to a webpage to find the flag. Going to the webpage shows an ultra compression service with the ability to upload files.</p> <p><img src="http://www.nusgreyhats.org/write-ups/img/res/asis/ucs/service.png" alt="" height="auto" width="600px" /></p> <p>First thing to do is to upload a legitimate file!<br /> I chose a random image file on my machine to upload.</p> <p><img src="http://www.nusgreyhats.org/write-ups/img/res/asis/ucs/upload.png" alt="" height="300px" width="auto" /></p> <p>By viewing all embeded javascript, we can tell that the file is sent using ajax to the uploader php script.</p> <p><code>$(document).ready(function...
+        </div>
+        <h2 style="text-align:right"><a href="/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/" class="button input-btn" style="padding:10px">Read More...</a></h2>
+    </article>
+</div>
+
+
+    <div class="content_container">
+    <article>
+        <h2 class="post_title">
             <a href="/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/">ASIS CTF Finals 2015 - Big Lie (Forensics 100)</a>
         </h2>
         <span class="date">
@@ -145,25 +164,6 @@
             <h2>Click Button! Attack Virus!</h2> <p><b>Points:</b> 200 <b>Category:</b> Offensive <b>Description:</b><br /><br /> <a href="/write-ups/resources/VirusClicker.apk">VirusClicker</a><br /> MD5: 1a0462c2bc27bdd3a5045036c36c3e31</p> <hr /> <h1>Solution</h1> <p> After downloading the APK and installing it on my BlueStacks Emulator, you see this screen that requires us to press on the button for 10'000'000 times... </p> <center><img src="/write-ups/img/res/virusclicker.png" height="300px" /><img src="/write-ups/img/res/10mclicks.png" height="300px" /></center> <p> We first use apktool to decompile the apk into the respective smali code. <br /> <img src="/write-ups/img/res/apkdecode.png" width="50%" height="50%" /><br /> The part of the code that we're interested in is the onTouchEvent that is called on every press. </p> <pre> .method public onTouchEvent(Landroid/view/MotionEvent;)Z .locals...
         </div>
         <h2 style="text-align:right"><a href="/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/" class="button input-btn" style="padding:10px">Read More...</a></h2>
-    </article>
-</div>
-
-
-    <div class="content_container">
-    <article>
-        <h2 class="post_title">
-            <a href="/write-ups/TrendMicroCTF-500-Captchas!-(Misc-300)/">TrendMicroCTF - 500 Captchas! (Misc 300)</a>
-        </h2>
-        <span class="date">
-            Published on October 08, 2015
-        </span>
-        
-            
-        
-        <div class="post_content">
-            <h1>Welcome to Captcha Challenge!</h1> <p>The challenge description was a website, upon entering the website, you are allowed to register/sign in.</p> <hr /> <p> After registering and logging in, you are shown a captcha, and it seems that the challenge was to solve 500 consecutive captchas without any mistakes. However, it seems that you are able to skip captchas by refreshing the page (this turned out to be very useful).<br /><br /> Captchas looks like this: </p> <center><img src="/write-ups/img/res/captcha.png" width="30%" height="30%" /><img src="/write-ups/img/res/captcha2.png" width="30%" height="30%" /></center> <p> To automatically solve all 500 captchas, we wrote a python script using the Python...
-        </div>
-        <h2 style="text-align:right"><a href="/write-ups/TrendMicroCTF-500-Captchas!-(Misc-300)/" class="button input-btn" style="padding:10px">Read More...</a></h2>
     </article>
 </div>
 

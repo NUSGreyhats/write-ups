@@ -41,6 +41,6 @@ The third one which gave us our flag is:
 ![]({{site.url|append: site.baseurl}}/img/res/asis/biglie/preflag.png){: height="200px" width="auto"}
 
 Throwing this into sublime to resize gives me:
-![]({{site.url|append: site.baseurl}}/img/res/asis/biglie/flag.png){: height="200px" width="auto"}
+![]({{site.url|append: site.baseurl}}/img/res/asis/biglie/flag.png){: height="auto" width="auto"}
 
 And we have our flag: **ASIS{e29a3ef6f1d71d04c5f107eb3c64bbbb}**

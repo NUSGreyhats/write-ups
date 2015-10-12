@@ -7,6 +7,22 @@
 		<atom:link href="http://www.nusgreyhats.org/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>ASIS CTF Finals 2015 - Ultra Compression (Web 125)</title>
+				
+				
+					<description>&lt;h1 id=&quot;ultra-compression&quot;&gt;ultra compression&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Points:&lt;/strong&gt;125&lt;br /&gt;
+&lt;strong&gt;Category:&lt;/strong&gt; Web&lt;br /&gt;
+Go &lt;a href=&quot;http://ucs.asis-ctf.ir/&quot;&gt;there&lt;/a&gt; and find the flag.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Mon, 12 Oct 2015 00:00:00 +0800</pubDate>
+				<link>http://www.nusgreyhats.org/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/</link>
+				<guid isPermaLink="true">http://www.nusgreyhats.org/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/</guid>
+			</item>
+		
+			<item>
 				<title>ASIS CTF Finals 2015 - Big Lie (Forensics 100)</title>
 				
 				
