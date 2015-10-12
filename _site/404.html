@@ -95,6 +95,25 @@
     <div class="content_container">
     <article>
         <h2 class="post_title">
+            <a href="/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/">ASIS CTF Finals 2015 - Big Lie (Forensics 100)</a>
+        </h2>
+        <span class="date">
+            Published on October 12, 2015
+        </span>
+        
+            
+        
+        <div class="post_content">
+            <h1 id="big-lie">Big Lie</h1> <p><strong>Points:</strong>100<br /> <strong>Category:</strong> Forensics<br /> Find the <a href="http://www.nusgreyhats.org/write-ups/resources/asis/biglie.pcap">flag</a>.<br /> MD5: c3037269053e61e10a2a2457051519c8</p> <hr /> <p>We are given a pcap file and asked to find the flag. So, I opened up the pcap file with wireshark and entered some filter to it.</p> <p>So, I am looking for http requests that contains the asis word.<br /> <code>http.request.uri contains asis</code></p> <p><img src="http://www.nusgreyhats.org/write-ups/img/res/asis/biglie/wireshark.png" alt="" height="500px" width="auto" /></p> <p>So, there’s this weird piwik.php call, and there seems to be a pastebin url in the get request.<br /> <code>http://0bin.asis.io/paste/Vyk5W274#1L8OT3oT7Xr0ryJlS5ASprAqgsQysKeebbSK90gGyQo</code><br /> <img src="http://www.nusgreyhats.org/write-ups/img/res/asis/biglie/interesting.png" alt="" height="200px" width="auto" /></p> <p>Looking at similar conversations, I found 3...
+        </div>
+        <h2 style="text-align:right"><a href="/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/" class="button input-btn" style="padding:10px">Read More...</a></h2>
+    </article>
+</div>
+
+
+    <div class="content_container">
+    <article>
+        <h2 class="post_title">
             <a href="/write-ups/CSAW-CTF-Qual-2015-pcapin-(Forensics-150)/">CSAW CTF Qualifications 2015 - pcapin (Forensics 150)</a>
         </h2>
         <span class="date">
@@ -145,25 +164,6 @@
             <h1>Welcome to Captcha Challenge!</h1> <p>The challenge description was a website, upon entering the website, you are allowed to register/sign in.</p> <hr /> <p> After registering and logging in, you are shown a captcha, and it seems that the challenge was to solve 500 consecutive captchas without any mistakes. However, it seems that you are able to skip captchas by refreshing the page (this turned out to be very useful).<br /><br /> Captchas looks like this: </p> <center><img src="/write-ups/img/res/captcha.png" width="30%" height="30%" /><img src="/write-ups/img/res/captcha2.png" width="30%" height="30%" /></center> <p> To automatically solve all 500 captchas, we wrote a python script using the Python...
         </div>
         <h2 style="text-align:right"><a href="/write-ups/TrendMicroCTF-500-Captchas!-(Misc-300)/" class="button input-btn" style="padding:10px">Read More...</a></h2>
-    </article>
-</div>
-
-
-    <div class="content_container">
-    <article>
-        <h2 class="post_title">
-            <a href="/write-ups/Capture-The-Flag-101-Workshop/">Capture The Flag 101 Workshop</a>
-        </h2>
-        <span class="date">
-            Published on August 09, 2015
-        </span>
-        
-            
-        
-        <div class="post_content">
-            <center><img src="/write-ups/img/thectf.jpg" width="50%" height="50%" /></center> <p> NUS Greyhats Capture The Flag 101 is a capture-the-flag (CTF) style workshop that will be spanned over two Saturdays. Participants will learn techniques and tools to exploit software vulnerabilities to uncover secret flags hidden in various challenge. This workshop is designed to be progressive and is beginner friendly. In addition, we will have a live CTF scoreboard to show your ranking :) </p> <p> You can sign up for the event <a href="https://docs.google.com/forms/d/1ppvnaRWzhwuSZ60CIKem4E37eyLQMbfltEw_xmutMBU/">here</a> (while stocks last). </p> <p> <b>Date:</b> 15 and 22 August 2015<br /> <b>Time:</b> 1PM - 5PM<br /> <b>Venue:</b> School of Computing...
-        </div>
-        <h2 style="text-align:right"><a href="/write-ups/Capture-The-Flag-101-Workshop/" class="button input-btn" style="padding:10px">Read More...</a></h2>
     </article>
 </div>
 

@@ -7,6 +7,23 @@
 		<atom:link href="http://www.nusgreyhats.org/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>ASIS CTF Finals 2015 - Big Lie (Forensics 100)</title>
+				
+				
+					<description>&lt;h1 id=&quot;big-lie&quot;&gt;Big Lie&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Points:&lt;/strong&gt;100&lt;br /&gt;
+&lt;strong&gt;Category:&lt;/strong&gt; Forensics&lt;br /&gt;
+Find the &lt;a href=&quot;http://www.nusgreyhats.org/write-ups/resources/asis/biglie.pcap&quot;&gt;flag&lt;/a&gt;.&lt;br /&gt;
+MD5: c3037269053e61e10a2a2457051519c8&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Mon, 12 Oct 2015 00:00:00 +0800</pubDate>
+				<link>http://www.nusgreyhats.org/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/</link>
+				<guid isPermaLink="true">http://www.nusgreyhats.org/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/</guid>
+			</item>
+		
+			<item>
 				<title>CSAW CTF Qualifications 2015 - pcapin (Forensics 150)</title>
 				
 				
@@ -149,7 +166,7 @@ Looking deeper, we realize that f9+45+1 = 13f -&amp;gt; 3f and e9+67=150 -&amp;g
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;Click [here](http://www.nusgreyhats.org/write-ups/resources/wu/csaw2015/pcapin_data_raw.txt) for the raw data found in the pcap.&lt;/p&gt;
+&lt;p&gt;Click &lt;a href=&quot;/write-ups/resources/wu/csaw2015/pcapin_data_raw.txt&quot;&gt;here&lt;/a&gt; for the raw data found in the pcap.&lt;/p&gt;
 
 </description>
 				

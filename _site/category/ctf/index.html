@@ -90,6 +90,25 @@
     <div class="content_container">
     <article>
         <h2 class="post_title">
+            <a href="/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/">ASIS CTF Finals 2015 - Big Lie (Forensics 100)</a>
+        </h2>
+        <span class="date">
+            Published on October 12, 2015
+        </span>
+        
+            
+        
+        <div class="post_content">
+            # Big Lie **Points:**100 **Category:** Forensics Find the [flag](http://www.nusgreyhats.org/write-ups/resources/asis/biglie.pcap). MD5: c3037269053e61e10a2a2457051519c8 --- We are given a pcap file and asked to find the flag. So, I opened up the pcap file with wireshark and entered some filter to it. So, I am looking for http requests that contains the asis word. `http.request.uri contains asis` ![](http://www.nusgreyhats.org/write-ups/img/res/asis/biglie/wireshark.png){: height="500px" width="auto"} So, there's this weird piwik.php call, and there seems to be a pastebin url in the get request. `http://0bin.asis.io/paste/Vyk5W274#1L8OT3oT7Xr0ryJlS5ASprAqgsQysKeebbSK90gGyQo` ![](http://www.nusgreyhats.org/write-ups/img/res/asis/biglie/interesting.png){: height="200px" width="auto"} Looking at similar conversations, I found 3 such conversations. The first one is: `http://0bin.asis.io/paste/TINcoc0f#-krvZ7lGwZ4e2JQ8n+3dfsMBqyN6Xk6SUzY7i0JKbpo`...
+        </div>
+        <h2 style="text-align:right"><a href="/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/" class="button input-btn" style="padding:10px">Read More...</a></h2>
+    </article>
+</div>
+
+
+    <div class="content_container">
+    <article>
+        <h2 class="post_title">
             <a href="/write-ups/CSAW-CTF-Qual-2015-pcapin-(Forensics-150)/">CSAW CTF Qualifications 2015 - pcapin (Forensics 150)</a>
         </h2>
         <span class="date">
