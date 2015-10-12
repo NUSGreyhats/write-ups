@@ -25,6 +25,8 @@ I chose a random image file on my machine to upload.
 
 By viewing all embeded javascript, we can tell that the file is sent using ajax to the uploader php script.
 
+The uploader php script is located at 'ajax_php_file.php'. However, it seems that the file uploaded is not stored on the server.
+
 `$(document).ready(function (e) {
 $("#upload").on('submit',(function(e) {
 e.preventDefault();
