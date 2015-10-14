@@ -13,7 +13,7 @@ description: NUS GreyHats is a newly formed special interest group designed to s
             {% if paginator.page == 1 %}
                 <span class="disabled"><i class="fa fa-angle-double-left"></i></span>
             {% else %}
-                <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}"><i class="fa fa-angle-double-left"></i></a>
+                <a href="{{ site.baseurl | replace: '//', '/' }}"><i class="fa fa-angle-double-left"></i></a>
             {% endif %}
         {% endif %}
 
@@ -33,7 +33,7 @@ description: NUS GreyHats is a newly formed special interest group designed to s
             {% if i == paginator.page %}
                 <span class="disabled">{{ i }}</span>
             {% else %}
-                <a href="/page/{{ i }}">{{ i }}</a>
+                <a href="{{ site.baseurl | replace: '//', '/' }}/page/{{ i }}/">{{ i }}</a>
             {% endif %}
         {% endfor %}
 

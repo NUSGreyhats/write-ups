@@ -7,6 +7,8 @@ tags: [CTF, WEB, ASIS, INJECTION]
 category: [CTF, WEB, INJECTION]
 --- 
 
+ASIS CTF 2015 Finals just took place over the weekend of 10,11 October 2015. The finals is open to all, however only qualified teams will be allowed to win the prizes. NUS Greyhats took part in it and solved a few challenges, this is our write-up for some of the challenges from ASIS CTF 2015 Finals. 
+
 # ultra compression
 **Points:**125
 **Category:** Web
@@ -14,7 +16,9 @@ Go [there](http://ucs.asis-ctf.ir/) and find the flag.
 
 ---
 
-Here we are told to go to a webpage to find the flag. Going to the webpage shows an ultra compression service with the ability to upload files.
+# Our solution
+
+Here we were told to go to a webpage to find the flag. Going to the webpage shows an ultra compression service with the ability to upload files.
 
 ![]({{site.url|append: site.baseurl}}/img/res/asis/ucs/service.png){: height="auto" width="600px"}
 
