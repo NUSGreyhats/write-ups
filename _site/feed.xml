@@ -2,13 +2,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">NUS Greyhats</title>
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://www.nusgreyhats.org/write-ups/feed.xml" />
-<link rel="alternate" type="text/html" href="http://www.nusgreyhats.org/write-ups" />
-<updated>2015-10-16T16:45:39+08:00</updated>
-<id>http://www.nusgreyhats.org/write-ups/</id>
+<link rel="self" type="application/atom+xml" href="http://nusgreyhats.org/write-ups/feed.xml" />
+<link rel="alternate" type="text/html" href="http://nusgreyhats.org/write-ups" />
+<updated>2015-10-16T21:39:04+08:00</updated>
+<id>http://nusgreyhats.org/write-ups/</id>
 <author>
   <name>NUS Greyhats</name>
-  <uri>http://www.nusgreyhats.org/write-ups/</uri>
+  <uri>http://nusgreyhats.org/write-ups/</uri>
   <email>contact@nusgreyhats.org</email>
 </author>
 
@@ -17,13 +17,13 @@
 
 <entry>
   <title type="html"><![CDATA[ASIS CTF Finals 2015 - Ultra Compression (Web 125)]]></title>
-  <link rel="alternate" type="text/html" href="http://www.nusgreyhats.org/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/" />
-  <id>http://www.nusgreyhats.org/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)</id>
+  <link rel="alternate" type="text/html" href="http://nusgreyhats.org/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/" />
+  <id>http://nusgreyhats.org/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)</id>
   <published>2015-10-12T00:00:00+08:00</published>
   <updated>2015-10-12T00:00:00+08:00</updated>
   <author>
     <name></name>
-    <uri>http://www.nusgreyhats.org/write-ups</uri>
+    <uri>http://nusgreyhats.org/write-ups</uri>
     
   </author>
   <content type="html">
@@ -41,12 +41,12 @@
 
 &lt;p&gt;Here we were told to go to a webpage to find the flag. Going to the webpage shows an ultra compression service with the ability to upload files.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/asis/ucs/service.png&quot; alt=&quot;&quot; height=&quot;auto&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/asis/ucs/service.png&quot; alt=&quot;&quot; height=&quot;auto&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;First thing to do is to upload a legitimate file!
 I chose a random image file on my machine to upload.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/asis/ucs/upload.png&quot; alt=&quot;&quot; height=&quot;300px&quot; width=&quot;300px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/asis/ucs/upload.png&quot; alt=&quot;&quot; height=&quot;300px&quot; width=&quot;300px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;By viewing all embeded javascript, we can tell that the file is sent using ajax to the uploader php script.&lt;/p&gt;
 
@@ -76,7 +76,7 @@ I chose a random image file on my machine to upload.&lt;/p&gt;
 
 &lt;p&gt;Using the Chrome browser’s developer tool, we can inspect the response of the ajax call.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/asis/ucs/crypt.png&quot; alt=&quot;&quot; height=&quot;300px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/asis/ucs/crypt.png&quot; alt=&quot;&quot; height=&quot;300px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As you can see, the filename
 &lt;code&gt;Screen Shot 2015-10-11 at 00.40.02.png&lt;/code&gt;
@@ -89,7 +89,7 @@ gets encrypted to
 &lt;code&gt;plain = &quot;.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Attempting to insert a semi-colon into the filename shows that the field was injectable.
-&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/asis/ucs/injection.png&quot; alt=&quot;&quot; height=&quot;200px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/asis/ucs/injection.png&quot; alt=&quot;&quot; height=&quot;200px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Using a python script to automatically map payload back to their corresponding plaintext, we can then inject commands to the website.&lt;/p&gt;
 
@@ -124,11 +124,11 @@ gets encrypted to
 
 &lt;p&gt;Traversing to /home/asis/, we can then do a ls to see that the flag.txt is kept there. Finally, using a cat command, we can obtain the flag!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/asis/ucs/flag.png&quot; alt=&quot;&quot; height=&quot;200px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/asis/ucs/flag.png&quot; alt=&quot;&quot; height=&quot;200px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;And we have our flag: &lt;strong&gt;ASIS{72a126946e40f67a04d926dd4786ff15}&lt;/strong&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://www.nusgreyhats.org/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/&quot;&gt;ASIS CTF Finals 2015 - Ultra Compression (Web 125)&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://www.nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on October 12, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://nusgreyhats.org/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/&quot;&gt;ASIS CTF Finals 2015 - Ultra Compression (Web 125)&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on October 12, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -137,13 +137,13 @@ gets encrypted to
 
 <entry>
   <title type="html"><![CDATA[ASIS CTF Finals 2015 - Big Lie (Forensics 100)]]></title>
-  <link rel="alternate" type="text/html" href="http://www.nusgreyhats.org/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/" />
-  <id>http://www.nusgreyhats.org/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)</id>
+  <link rel="alternate" type="text/html" href="http://nusgreyhats.org/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/" />
+  <id>http://nusgreyhats.org/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)</id>
   <published>2015-10-12T00:00:00+08:00</published>
   <updated>2015-10-12T00:00:00+08:00</updated>
   <author>
     <name></name>
-    <uri>http://www.nusgreyhats.org/write-ups</uri>
+    <uri>http://nusgreyhats.org/write-ups</uri>
     
   </author>
   <content type="html">
@@ -153,7 +153,7 @@ gets encrypted to
 &lt;p&gt;&lt;strong&gt;Points:&lt;/strong&gt;100
 &lt;strong&gt;Category:&lt;/strong&gt; Forensics&lt;/p&gt;
 
-&lt;p&gt;Find the &lt;a href=&quot;http://www.nusgreyhats.org/write-ups/resources/files/asis/biglie.pcap&quot;&gt;flag&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Find the &lt;a href=&quot;http://nusgreyhats.org/write-ups/resources/files/asis/biglie.pcap&quot;&gt;flag&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;MD5: c3037269053e61e10a2a2457051519c8&lt;/p&gt;
 
@@ -166,32 +166,32 @@ gets encrypted to
 &lt;p&gt;So, the first thing to do is to filter away redundant packets. I am only looking for HTTP requests URI with the word “asis” in it.
 &lt;code&gt;http.request.uri contains asis&lt;/code&gt; &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/asis/biglie/wireshark.png&quot; alt=&quot;&quot; height=&quot;500px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/asis/biglie/wireshark.png&quot; alt=&quot;&quot; height=&quot;500px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We can see this this weird piwik.php request made to a HTTP server, and there seems to be a pastebin url in the GET request.
 &lt;code&gt;http://0bin.asis.io/paste/Vyk5W274#1L8OT3oT7Xr0ryJlS5ASprAqgsQysKeebbSK90gGyQo&lt;/code&gt;
-&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/asis/biglie/interesting.png&quot; alt=&quot;&quot; height=&quot;200px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/asis/biglie/interesting.png&quot; alt=&quot;&quot; height=&quot;200px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Looking at all similar conversations, I found 3 such conversations.&lt;/p&gt;
 
 &lt;p&gt;The first one is:
 &lt;code&gt;http://0bin.asis.io/paste/TINcoc0f#-krvZ7lGwZ4e2JQ8n+3dfsMBqyN6Xk6SUzY7i0JKbpo&lt;/code&gt;
-&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/asis/biglie/first.png&quot; alt=&quot;&quot; height=&quot;200px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/asis/biglie/first.png&quot; alt=&quot;&quot; height=&quot;200px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The second one is:
 &lt;code&gt;http://0bin.asis.io/paste/Vyk5W274#1L8OT3oT7Xr0ryJlS5ASprAqgsQysKeebbSK90gGyQo&lt;/code&gt;
-&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/asis/biglie/second.png&quot; alt=&quot;&quot; height=&quot;200px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/asis/biglie/second.png&quot; alt=&quot;&quot; height=&quot;200px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The third one which gave us our flag is:
 &lt;code&gt;http://0bin.asis.io/paste/1ThAoKv4#Zz-nHPnr0vGGg3s/7/RWD2pnZPZl580x9Y2G3IUehfc&lt;/code&gt;
-&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/asis/biglie/preflag.png&quot; alt=&quot;&quot; height=&quot;200px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/asis/biglie/preflag.png&quot; alt=&quot;&quot; height=&quot;200px&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Throwing this into a text editor gives me:
-&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/asis/biglie/flag.png&quot; alt=&quot;&quot; height=&quot;auto&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/asis/biglie/flag.png&quot; alt=&quot;&quot; height=&quot;auto&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;And we have our flag: &lt;strong&gt;ASIS{e29a3ef6f1d71d04c5f107eb3c64bbbb}&lt;/strong&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://www.nusgreyhats.org/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/&quot;&gt;ASIS CTF Finals 2015 - Big Lie (Forensics 100)&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://www.nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on October 12, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://nusgreyhats.org/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/&quot;&gt;ASIS CTF Finals 2015 - Big Lie (Forensics 100)&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on October 12, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -200,13 +200,13 @@ gets encrypted to
 
 <entry>
   <title type="html"><![CDATA[CSAW CTF Qualifications 2015 - pcapin (Forensics 150)]]></title>
-  <link rel="alternate" type="text/html" href="http://www.nusgreyhats.org/write-ups/CSAW-CTF-Qual-2015-pcapin-(Forensics-150)/" />
-  <id>http://www.nusgreyhats.org/write-ups/CSAW-CTF-Qual-2015-pcapin-(Forensics-150)</id>
+  <link rel="alternate" type="text/html" href="http://nusgreyhats.org/write-ups/CSAW-CTF-Qual-2015-pcapin-(Forensics-150)/" />
+  <id>http://nusgreyhats.org/write-ups/CSAW-CTF-Qual-2015-pcapin-(Forensics-150)</id>
   <published>2015-10-09T00:00:00+08:00</published>
   <updated>2015-10-09T00:00:00+08:00</updated>
   <author>
     <name></name>
-    <uri>http://www.nusgreyhats.org/write-ups</uri>
+    <uri>http://nusgreyhats.org/write-ups</uri>
     
   </author>
   <content type="html">
@@ -308,7 +308,7 @@ Looking deeper, we realize that f9+45+1 = 13f -&amp;gt; 3f and e9+67=150 -&amp;g
 
 &lt;p&gt;Click &lt;a href=&quot;/write-ups/resources/files/wu/csaw2015/pcapin_data_raw.txt&quot;&gt;here&lt;/a&gt; for the raw data found in the pcap.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://www.nusgreyhats.org/write-ups/CSAW-CTF-Qual-2015-pcapin-(Forensics-150)/&quot;&gt;CSAW CTF Qualifications 2015 - pcapin (Forensics 150)&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://www.nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on October 09, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://nusgreyhats.org/write-ups/CSAW-CTF-Qual-2015-pcapin-(Forensics-150)/&quot;&gt;CSAW CTF Qualifications 2015 - pcapin (Forensics 150)&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on October 09, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -317,13 +317,13 @@ Looking deeper, we realize that f9+45+1 = 13f -&amp;gt; 3f and e9+67=150 -&amp;g
 
 <entry>
   <title type="html"><![CDATA[TrendMicroCTF - VirusClicker (Offensive 200)]]></title>
-  <link rel="alternate" type="text/html" href="http://www.nusgreyhats.org/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/" />
-  <id>http://www.nusgreyhats.org/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)</id>
+  <link rel="alternate" type="text/html" href="http://nusgreyhats.org/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/" />
+  <id>http://nusgreyhats.org/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)</id>
   <published>2015-10-08T00:00:00+08:00</published>
   <updated>2015-10-08T00:00:00+08:00</updated>
   <author>
     <name></name>
-    <uri>http://www.nusgreyhats.org/write-ups</uri>
+    <uri>http://nusgreyhats.org/write-ups</uri>
     
   </author>
   <content type="html">
@@ -331,7 +331,7 @@ Looking deeper, we realize that f9+45+1 = 13f -&amp;gt; 3f and e9+67=150 -&amp;g
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Points:&lt;/em&gt;&lt;/strong&gt; 200 &lt;strong&gt;&lt;em&gt;Category:&lt;/em&gt;&lt;/strong&gt; Offensive &lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Description:&lt;/em&gt;&lt;/strong&gt;
-&lt;a href=&quot;http://www.nusgreyhats.org/write-ups/resources/files/VirusClicker.apk&quot;&gt;VirusClicker&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://nusgreyhats.org/write-ups/resources/files/VirusClicker.apk&quot;&gt;VirusClicker&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;MD5: 1a0462c2bc27bdd3a5045036c36c3e31&lt;/p&gt;
 
@@ -340,12 +340,12 @@ Looking deeper, we realize that f9+45+1 = 13f -&amp;gt; 3f and e9+67=150 -&amp;g
 
 &lt;p&gt;After downloading the APK and installing it on my BlueStacks Emulator, you see this screen that requires us to press on the button for 10’000’000 times…&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/virusclicker.png&quot; alt=&quot;&quot; height=&quot;300px&quot; width=&quot;200px&quot; /&gt;
-&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/10mclicks.png&quot; alt=&quot;&quot; height=&quot;300px&quot; width=&quot;200px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/virusclicker.png&quot; alt=&quot;&quot; height=&quot;300px&quot; width=&quot;200px&quot; /&gt;
+&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/10mclicks.png&quot; alt=&quot;&quot; height=&quot;300px&quot; width=&quot;200px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We first use apktool to decompile the apk into the respective smali code. &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/apkdecode.png&quot; alt=&quot;&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/apkdecode.png&quot; alt=&quot;&quot; width=&quot;auto&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The part of the code that we’re interested in is the onTouchEvent that is called on every press.&lt;/p&gt;
 
@@ -434,15 +434,15 @@ Also, it seems that there are “mini-checkpoints” that you’re suppose to hi
 
 &lt;p&gt;The same for all the “mini-checkpoints”. 
 We then use apktool to recompile the smali code back to .apk and then use jarsigner to sign it with a key we generated.
-&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/apksign.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/apksign.png&quot; alt=&quot;&quot; /&gt;
 We then install the “patched” apk onto the BlueStacks emulator and tada! We got the flag!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.nusgreyhats.org/write-ups/resources/images/virusflag.png&quot; alt=&quot;&quot; width=&quot;200px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/virusflag.png&quot; alt=&quot;&quot; width=&quot;200px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;TMCTF{Congrats_10MClicks}&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://www.nusgreyhats.org/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/&quot;&gt;TrendMicroCTF - VirusClicker (Offensive 200)&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://www.nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on October 08, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://nusgreyhats.org/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/&quot;&gt;TrendMicroCTF - VirusClicker (Offensive 200)&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on October 08, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -451,13 +451,13 @@ We then install the “patched” apk onto the BlueStacks emulator and tada! We 
 
 <entry>
   <title type="html"><![CDATA[TrendMicroCTF - 500 Captchas! (Misc 300)]]></title>
-  <link rel="alternate" type="text/html" href="http://www.nusgreyhats.org/write-ups/TrendMicroCTF-500-Captchas!-(Misc-300)/" />
-  <id>http://www.nusgreyhats.org/write-ups/TrendMicroCTF-500-Captchas!-(Misc-300)</id>
+  <link rel="alternate" type="text/html" href="http://nusgreyhats.org/write-ups/TrendMicroCTF-500-Captchas!-(Misc-300)/" />
+  <id>http://nusgreyhats.org/write-ups/TrendMicroCTF-500-Captchas!-(Misc-300)</id>
   <published>2015-10-08T00:00:00+08:00</published>
   <updated>2015-10-08T00:00:00+08:00</updated>
   <author>
     <name></name>
-    <uri>http://www.nusgreyhats.org/write-ups</uri>
+    <uri>http://nusgreyhats.org/write-ups</uri>
     
   </author>
   <content type="html">
@@ -639,7 +639,7 @@ We then install the “patched” apk onto the BlueStacks emulator and tada! We 
 &lt;p&gt;And we have our flag: &lt;b&gt;TMCTF{217dae3fd34cee799658d4552e37827f}&lt;/b&gt;&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://www.nusgreyhats.org/write-ups/TrendMicroCTF-500-Captchas!-(Misc-300)/&quot;&gt;TrendMicroCTF - 500 Captchas! (Misc 300)&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://www.nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on October 08, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://nusgreyhats.org/write-ups/TrendMicroCTF-500-Captchas!-(Misc-300)/&quot;&gt;TrendMicroCTF - 500 Captchas! (Misc 300)&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on October 08, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -648,13 +648,13 @@ We then install the “patched” apk onto the BlueStacks emulator and tada! We 
 
 <entry>
   <title type="html"><![CDATA[Capture The Flag 101 Workshop]]></title>
-  <link rel="alternate" type="text/html" href="http://www.nusgreyhats.org/write-ups/Capture-The-Flag-101-Workshop/" />
-  <id>http://www.nusgreyhats.org/write-ups/Capture-The-Flag-101-Workshop</id>
+  <link rel="alternate" type="text/html" href="http://nusgreyhats.org/write-ups/Capture-The-Flag-101-Workshop/" />
+  <id>http://nusgreyhats.org/write-ups/Capture-The-Flag-101-Workshop</id>
   <published>2015-08-09T00:00:00+08:00</published>
   <updated>2015-08-09T00:00:00+08:00</updated>
   <author>
     <name></name>
-    <uri>http://www.nusgreyhats.org/write-ups</uri>
+    <uri>http://nusgreyhats.org/write-ups</uri>
     
   </author>
   <content type="html">
@@ -708,7 +708,7 @@ Yes. However, due to venue constraint, priority will be given to NUS student. Do
 &lt;hr /&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://www.nusgreyhats.org/write-ups/Capture-The-Flag-101-Workshop/&quot;&gt;Capture The Flag 101 Workshop&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://www.nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on August 09, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://nusgreyhats.org/write-ups/Capture-The-Flag-101-Workshop/&quot;&gt;Capture The Flag 101 Workshop&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on August 09, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -717,13 +717,13 @@ Yes. However, due to venue constraint, priority will be given to NUS student. Do
 
 <entry>
   <title type="html"><![CDATA[POLICTF 2015 Write Up - John the Traveller (Web)]]></title>
-  <link rel="alternate" type="text/html" href="http://www.nusgreyhats.org/write-ups/polictf-2015-write-up-john-the-traveller-(web)/" />
-  <id>http://www.nusgreyhats.org/write-ups/polictf-2015-write-up-john-the-traveller-(web)</id>
+  <link rel="alternate" type="text/html" href="http://nusgreyhats.org/write-ups/polictf-2015-write-up-john-the-traveller-(web)/" />
+  <id>http://nusgreyhats.org/write-ups/polictf-2015-write-up-john-the-traveller-(web)</id>
   <published>2015-08-03T00:00:00+08:00</published>
   <updated>2015-08-03T00:00:00+08:00</updated>
   <author>
     <name></name>
-    <uri>http://www.nusgreyhats.org/write-ups</uri>
+    <uri>http://nusgreyhats.org/write-ups</uri>
     
   </author>
   <content type="html">
@@ -763,7 +763,7 @@ Yes. However, due to venue constraint, priority will be given to NUS student. Do
 				&lt;/p&gt;
 			&lt;/div&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://www.nusgreyhats.org/write-ups/polictf-2015-write-up-john-the-traveller-(web)/&quot;&gt;POLICTF 2015 Write Up - John the Traveller (Web)&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://www.nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on August 03, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://nusgreyhats.org/write-ups/polictf-2015-write-up-john-the-traveller-(web)/&quot;&gt;POLICTF 2015 Write Up - John the Traveller (Web)&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on August 03, 2015.&lt;/p&gt;
   </content>
 </entry>
 

@@ -5,7 +5,7 @@ locale: en_US
 description: NUS Greyhats is a newly formed special interest group designed to spark students' interest in information security and advance the level of security proficiency towards the aim of contributing to the growing need for cyber defenders in the government and private sectors. 
 logo: icon.png
 search: true
-url: http://www.nusgreyhats.org/write-ups
+url: http://nusgreyhats.org/write-ups
 
 # Jekyll configuration
 
