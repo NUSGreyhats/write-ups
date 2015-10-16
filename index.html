@@ -1,56 +1,12 @@
 ---
-layout: index
-description: NUS GreyHats is a newly formed special interest group designed to spark students' interest in information security and advance the level of security proficiency towards the aim of contributing to the growing need for cyber defenders in the government and private sectors.
+layout: page
+title: Articles
+excerpt: "NUS Greyhats is a newly formed special interest group designed to spark students' interest in information security and advance the level of security proficiency towards the aim of contributing to the growing need for cyber defenders in the government and private sectors."
+search_omit: true
 ---
-{% for post in paginator.posts %}
-    {% include article_index.html %}
+
+<ul class="post-list">
+{% for post in site.posts limit:10 %} 
+  <li><article><a href="{{ site.url }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>{% if post.excerpt %} <span class="excerpt">{{ post.excerpt }}</span>{% endif %}</a></article></li>
 {% endfor %}
-
-{% if paginator.total_pages > 1 %}
-    <div class="pagination">
-        <!-- link to first page -->
-        {% if paginator.total_pages > 3 %}
-            {% if paginator.page == 1 %}
-                <span class="disabled"><i class="fa fa-angle-double-left"></i></span>
-            {% else %}
-                <a href="{{ site.baseurl | replace: '//', '/' }}"><i class="fa fa-angle-double-left"></i></a>
-            {% endif %}
-        {% endif %}
-
-        <!-- previous link -->
-        {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="fa fa-angle-left"></i></a>
-        {% else %}
-            <span class="disabled"><i class="fa fa-angle-left"></i></span>
-        {% endif %}
-
-        <!-- number links -->
-        {% capture start %}
-            {{ paginator.page | minus: 3 }}
-        {% endcapture %}
-
-        {% for i in (1..paginator.total_pages) limit: 5 offset: start %}
-            {% if i == paginator.page %}
-                <span class="disabled">{{ i }}</span>
-            {% else %}
-                <a href="{{ site.baseurl | replace: '//', '/' }}/page/{{ i }}/">{{ i }}</a>
-            {% endif %}
-        {% endfor %}
-
-        <!-- next link -->
-        {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="fa fa-angle-right"></i></a>
-        {% else %}
-            <span class="disabled"><i class="fa fa-angle-right"></i></span>
-        {% endif %}
-
-        <!-- last page link -->
-        {% if paginator.total_pages > 3 %}
-            {% if paginator.page == paginator.total_pages %}
-                <span class="disabled"><i class="fa fa-angle-double-right"></i></span>
-            {% else %}
-                <a href="{{ site.baseurl | replace: '//', '/' }}/page/{{paginator.total_pages}}"><i class="fa fa-angle-double-right"></i></a>
-            {% endif %}
-        {% endif %}
-    </div>
-{% endif %}
+</ul>

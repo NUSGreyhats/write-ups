@@ -1,13 +1,15 @@
 ---
+layout: post
 title: Capture The Flag 101 Workshop
-homedisplay: featimg
 author: quanyang
 description: NUS GreyHats Capture The Flag 101 Workshop
 tags: [CTF101,CTF,WORKSHOP]
 category: [CTF101,CTF,WORKSHOP]
+excerpt: ""
 comments: true
+share: true
 ---
-<center><img src="/write-ups/img/thectf.jpg" width="50%" height="50%"></center>
+<center><img src="/write-ups/resources/images/ctf101/thectf.jpg" width="50%" height="50%"></center>
 <p>
 NUS Greyhats Capture The Flag 101 is a capture-the-flag (CTF) style workshop that will be spanned over two Saturdays. Participants will learn techniques and tools to exploit software vulnerabilities to uncover secret flags hidden in various challenge. This workshop is designed to be progressive and is beginner friendly. In addition, we will have a live CTF scoreboard to show your ranking :)  
 </p>
