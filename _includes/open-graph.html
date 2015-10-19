@@ -1,6 +1,6 @@
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-{% if page.excerpt %}<meta name="twitter:description" content="{{ page.excerpt | strip_html }}">{% endif %}
+{% if page.excerpt %}<meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html }}{% else %}{{ page.excerpt | strip_html }}{% endif %}">{% endif %}
 {% if site.owner.twitter %}<meta name="twitter:site" content="@{{ site.owner.twitter }}">{% endif %}
 {% if author.twitter %}<meta name="twitter:creator" content="@{{ author.twitter }}">{% endif %}
 {% if page.image.feature %}
@@ -14,6 +14,6 @@
 <meta property="og:locale" content="{{ site.locale }}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-{% if page.excerpt %}<meta property="og:description" content="{{ page.excerpt | strip_html }}">{% endif %}
+{% if page.excerpt %}<meta property="og:description" content="{% if page.description %}{{ page.description | strip_html }}{% else %}{{ page.excerpt | strip_html }}{% endif %}">{% endif %}
 <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 <meta property="og:site_name" content="{{ site.title }}">

@@ -250,18 +250,29 @@ span + .entry-title {
 	}
 	.entry-title {
 		text-align: center;
-		max-width: 70%;
+		@include media($medium) {
+		}
 	}
-	.sidebar-content, .entry-content {
-		max-width: 70%;
+	.entry-content {
+		@include media($medium) {
+		max-width: 75%;
 		@include span-columns(12);
+		}
 	}
 }
 
 .sidebar-content {
+float:left;
+padding-top:30px;
+@include media($medium) {
+	max-width:20%;
+	float:right;
+}
+
 word-break:break-word;
 
 .entry-title {
+	padding-bottom:10px;
 	max-width: 100% !important;
 }
 

@@ -15,17 +15,18 @@
   <article class="entry">
     {% if page.image.feature %}<img src="{{ site.url }}/images/{{ page.image.feature }}" class="entry-feature-image" alt="{{ page.title }}" {% if site.logo == null %}style="margin-top:0;"{% endif %}>{% if page.image.credit %}<p class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></p>{% endif %}{% endif %}
     <div class="entry-wrapper">
-      <div class="sidebar-content" style="float:right;max-width:20%;">
-      {% include side-bar.html %}
-      </div>
+      <div class="entry-content">
+        
       <header class="entry-header">
         <h1 class="entry-title">Monthly archive for {{page.date | date: "%B %Y"}}</h1>
       </header>
-      <div class="entry-content">
       	<ul class="post-list">
         	{{ content }}
     	</ul>
       </div><!-- /.entry-content -->
+      <div class="sidebar-content">
+      {% include side-bar.html %}
+      </div>
     </div><!-- /.entry-wrapper -->
   </article>
 </div><!-- /#main -->

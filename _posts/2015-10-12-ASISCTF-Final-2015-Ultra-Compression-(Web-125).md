@@ -2,7 +2,7 @@
 layout: post
 title: ASIS CTF Finals 2015 - Ultra Compression (Web 125)
 author: quanyang
-description: ASIS CTF Finals 2015 Web 125. Ultra Compression Service.
+description: "ASIS CTF Finals 2015 Web 125. Ultra Compression Service."
 tags: [CTF, WEB, ASIS, INJECTION]
 categories: [CTF, WEB, INJECTION]
 excerpt: ""
