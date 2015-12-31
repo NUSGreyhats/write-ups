@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://nusgreyhats.org/write-ups/feed.xml" />
 <link rel="alternate" type="text/html" href="http://nusgreyhats.org/write-ups" />
-<updated>2015-12-31T19:18:00+08:00</updated>
+<updated>2015-12-31T19:23:49+08:00</updated>
 <id>http://nusgreyhats.org/write-ups/</id>
 <author>
   <name>NUS Greyhats</name>
@@ -27,7 +27,7 @@
     
   </author>
   <content type="html">
-    &lt;p&gt;32C3 CTF is organized along with the Chaos Communication Congress in Hamburg, it took started on Dec. 27, 20:00 UTC and lasted 48h until Dec. 29, 20:00 UTC.&lt;/p&gt;
+    &lt;p&gt;32C3 CTF is organized along with the Chaos Communication Congress in Hamburg, it started on Dec. 27, 20:00 UTC and lasted 48h until Dec. 29, 20:00 UTC.&lt;/p&gt;
 
 &lt;h1 id=&quot;flash&quot;&gt;Flash&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -164,7 +164,7 @@ The service is available &lt;a href=&quot;http://136.243.194.37:8001/upload.py&q
 &lt;span class=&quot;lineno&quot;&gt;100&lt;/span&gt;       &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Signature check failed!&amp;#39;&lt;/span&gt;
 &lt;span class=&quot;lineno&quot;&gt;101&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;print_html_status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;From the python script, we can tell that the authentication process is as follows:
+&lt;p&gt;From the python script, we can tell that the verification process is as follows:
 encrypt(md5(firmware.bin),public_key) == signature&lt;/p&gt;
 
 &lt;p&gt;The other interesting finding is the command &lt;code&gt;cmd = &#39;cd &#39; + filename + &#39;; ./install&#39;&lt;/code&gt;. This tells us that we’ll have to modify the file &lt;code&gt;install&lt;/code&gt; to run arbitrary code in order to get the flag.&lt;/p&gt;
@@ -230,6 +230,7 @@ Instead, what is interesting is the calc_md5 function.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://nusgreyhats.org/write-ups/resources/images/32c3ctf/flag.png&quot; alt=&quot;&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;Hurray!&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;http://nusgreyhats.org/write-ups/32C3-CTF-Flash-(Reversing-300)/&quot;&gt;32C3 CTF - Flash (Reversing 300)&lt;/a&gt; was originally published by NUS Greyhats at &lt;a href=&quot;http://nusgreyhats.org/write-ups&quot;&gt;NUS Greyhats&lt;/a&gt; on December 31, 2015.&lt;/p&gt;
   </content>

@@ -10,7 +10,7 @@ share: true
 comments: true
 --- 
 
-32C3 CTF is organized along with the Chaos Communication Congress in Hamburg, it took started on Dec. 27, 20:00 UTC and lasted 48h until Dec. 29, 20:00 UTC.
+32C3 CTF is organized along with the Chaos Communication Congress in Hamburg, it started on Dec. 27, 20:00 UTC and lasted 48h until Dec. 29, 20:00 UTC.
 
 # Flash
 >**Points:** 300  
@@ -149,7 +149,7 @@ if os.environ['REQUEST_METHOD'] == 'POST':
     print_html_status(msg)
 {% endhighlight %}
 
-From the python script, we can tell that the authentication process is as follows:
+From the python script, we can tell that the verification process is as follows:
 encrypt(md5(firmware.bin),public_key) == signature
 
 The other interesting finding is the command `cmd = 'cd ' + filename + '; ./install'`. This tells us that we'll have to modify the file `install` to run arbitrary code in order to get the flag.
@@ -221,6 +221,4 @@ With that, we can make use of multiple ways to obtain the flag located at `/home
 
 ![]({{site.url|append: site.baseurl}}/resources/images/32c3ctf/flag.png){: width="100%"}
 
-
-
-
+Hurray!
