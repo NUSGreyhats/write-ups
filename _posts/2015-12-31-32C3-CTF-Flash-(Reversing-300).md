@@ -164,7 +164,7 @@ def calc_md5(filename):
     return re.search('[a-f0-9]{32}', result).group(0).decode('hex')
 {% endhighlight %}
 
-The function uses regular expression to obtain the MD5 from the output of the subprocess command, and what is interesting is that it takes the first occurance of a 32-characters a-f0-9 string as the MD5 hash (due to `re.search().***group(0)***`).
+The function uses regular expression to obtain the MD5 from the output of the subprocess command, and what is interesting is that it takes the first occurance of a 32-characters a-f0-9 string as the MD5 hash (due to `re.search().group(0)`).
 
 {% highlight bash linenos %}
 $ ./md5calc < firmware.bin | tar xv
