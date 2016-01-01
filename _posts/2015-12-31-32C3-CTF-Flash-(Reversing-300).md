@@ -29,7 +29,7 @@ We're given a gzip compressed file, which includes a sample firmware, the public
 
 ![]({{site.url|append: site.baseurl}}/resources/images/32c3ctf/firmware-bin.png){: width="50%"}
 
-Running file on the firmware.bin shows that it is an archive. The signature file contains in it seems to be a digital signature that is used to ensure the authenticity of the firmware.
+Running file on the firmware.bin shows that it is an archive. The signature file contained in it seems to be a digital signature that is used to ensure the authenticity of the firmware.
 
 {% highlight bash linenos %}
 $ file firmware.bin
@@ -164,7 +164,7 @@ def calc_md5(filename):
     return re.search('[a-f0-9]{32}', result).group(0).decode('hex')
 {% endhighlight %}
 
-The function uses regular expression to obtain the MD5 from the output of the subprocess command, and what is interesting is that it takes the first occurance of a 32-characters a-f0-9 string as the MD5 hash.
+The function uses regular expression to obtain the MD5 from the output of the subprocess command, and what is interesting is that it takes the first occurance of a 32-characters a-f0-9 string as the MD5 hash (due to `re.search().***group(0)***`).
 
 {% highlight bash linenos %}
 $ ./md5calc < firmware.bin | tar xv
