@@ -1,7 +1,7 @@
 ---
 layout: post
 title: INSOMNIHACK CTF Teaser 2016 Write Up - Smartcat1
-author: Xue Hui
+author: xuehui
 description: INSOMNIHACK CTF Teaser 2016 Write Up - Smartcat1
 tags: [INSOMNIHACK,CTF]
 excerpt: ""
