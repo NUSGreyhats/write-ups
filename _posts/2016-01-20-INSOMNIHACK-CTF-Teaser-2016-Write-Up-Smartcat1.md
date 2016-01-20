@@ -10,7 +10,9 @@ share: true
 ---
 
 ##### Goal:	To find the file which holds information on the flag.
+
 ##### Line of thought: Find a way to input multiple commands into the shell so that you can do other things like "ls" instead of only just pinging. 
+
 ------
 
 #####<u>Tools used:</u>

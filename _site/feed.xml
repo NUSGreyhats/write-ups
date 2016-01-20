@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://nusgreyhats.org/write-ups/feed.xml" />
 <link rel="alternate" type="text/html" href="http://nusgreyhats.org/write-ups" />
-<updated>2016-01-20T22:58:00+08:00</updated>
+<updated>2016-01-20T22:59:36+08:00</updated>
 <id>http://nusgreyhats.org/write-ups/</id>
 <author>
   <name>NUS Greyhats</name>
@@ -28,8 +28,10 @@
   </author>
   <content type="html">
     &lt;h5 id=&quot;goalto-find-the-file-which-holds-information-on-the-flag&quot;&gt;Goal:	To find the file which holds information on the flag.&lt;/h5&gt;
-&lt;p&gt;##### Line of thought: Find a way to input multiple commands into the shell so that you can do other things like “ls” instead of only just pinging. 
-——&lt;/p&gt;
+
+&lt;h5 id=&quot;line-of-thought-find-a-way-to-input-multiple-commands-into-the-shell-so-that-you-can-do-other-things-like-ls-instead-of-only-just-pinging&quot;&gt;Line of thought: Find a way to input multiple commands into the shell so that you can do other things like “ls” instead of only just pinging.&lt;/h5&gt;
+
+&lt;hr /&gt;
 
 &lt;h5 id=&quot;utools-usedu&quot;&gt;&lt;u&gt;Tools used:&lt;/u&gt;&lt;/h5&gt;
 &lt;ul&gt;
