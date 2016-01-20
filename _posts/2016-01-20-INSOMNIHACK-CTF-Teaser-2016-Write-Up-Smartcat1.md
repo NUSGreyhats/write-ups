@@ -25,7 +25,7 @@ share: true
 I started this problem by typing some things into the textbox that was available on the website. Some simple choices I started with was "localhost" and "ccc" just to see what I could ping/what would happen. I also tried some other special characters to see if I could input special commands or anything.
 I managed to conclude the following based on the error messages:
 
-- These characters are blocked:  $;&|({`\t
+- These characters are blocked:  ```$;&|({`\t```
 - The textbox acts like a bash/shell in linux, because of the ping –c 1 “xxxx” 
 		
 		
