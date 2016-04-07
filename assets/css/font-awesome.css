@@ -13,13 +13,13 @@
   font-style: normal;
 }
 i{
-	font-family: 'FontAwesome';
+	font-family: 'FontAwesome',"source-sans-pro",sans-serif;
 	font-weight:normal;
 	font-style:normal ;
 }
 .fa {
   display: inline-block;
-  font-family: FontAwesome;
+  font-family: FontAwesome,"source-sans-pro",sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1;
