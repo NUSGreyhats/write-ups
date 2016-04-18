@@ -29,9 +29,9 @@ Difficulty: Hard
 Points: 40  
 Write up: [VXSecurity.sg](http://www.vxsecurity.sg/2016/04/15/walkthrough-x-ctf-2016-worm/)
 
-Challenge: xuehui <br>
-Difficulty: Easy <br>
-Points: 5 <br> 
+Challenge: xuehui  
+Difficulty: Easy  
+Points: 5  
 Write up: [here](https://natx.xyz/blog/2016/04/11/xctf-xh)
 
 More will be posted soon.
