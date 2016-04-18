@@ -22,11 +22,16 @@ More information can be found [here](http://www.nusgreyhats.org/x-ctf/).
 
 ---
 
-Many people has been asking for write ups to the challenges in X-CTF 2016. We'll be posting the write ups to challenges incrementally over here, so do check back for updates.
+Many people have been asking for write ups to the challenges in X-CTF 2016. We'll be posting the write ups to challenges incrementally over here, so do check back for updates.
 
 Challenge: Worm  
 Difficulty: Hard  
 Points: 40  
 Write up: [VXSecurity.sg](http://www.vxsecurity.sg/2016/04/15/walkthrough-x-ctf-2016-worm/)
+
+Challenge: xuehui <br>
+Difficulty: Easy <br>
+Points: 5 <br> 
+Write up: [here](https://natx.xyz/blog/2016/04/11/xctf-xh)
 
 More will be posted soon.
