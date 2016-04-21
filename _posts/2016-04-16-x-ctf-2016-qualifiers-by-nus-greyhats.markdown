@@ -34,14 +34,14 @@ Difficulty: Easy
 Points: 5  
 Write up: [here](https://natx.xyz/blog/2016/04/11/xctf-xh)
 
-Challenge: Fact0r!z3
-Difficulty: Easy
-Points: 7
+Challenge: Fact0r!z3  
+Difficulty: Easy  
+Points: 7  
 Write up: [quanyang.github.io](http://quanyang.github.io/x-ctf-fact0r!z3-and-fact0r!z3_aga!n-crypto/)
 
-Challenge: Fact0r!z3_aga!n
-Difficulty: Moderate
-Points: 15
+Challenge: Fact0r!z3_aga!n  
+Difficulty: Moderate  
+Points: 15  
 Writ up: [quanyang.github.io](http://quanyang.github.io/x-ctf-fact0r!z3-and-fact0r!z3_aga!n-crypto/)
 
 More will be posted soon.
