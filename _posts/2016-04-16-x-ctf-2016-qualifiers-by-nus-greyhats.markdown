@@ -44,4 +44,9 @@ Difficulty: Moderate
 Points: 15  
 Write up: [quanyang.github.io](http://quanyang.github.io/x-ctf-fact0r!z3-and-fact0r!z3_aga!n-crypto/)
 
+Challenge: b0verfl0w  
+Difficulty: Moderate  
+Points: 15  
+Write up: [quanyang.github.io](http://quanyang.github.io/x-ctf-b0verfl0w-pwn/)
+
 More will be posted soon.
