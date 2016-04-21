@@ -42,6 +42,6 @@ Write up: [quanyang.github.io](http://quanyang.github.io/x-ctf-fact0r!z3-and-fac
 Challenge: Fact0r!z3_aga!n  
 Difficulty: Moderate  
 Points: 15  
-Writ up: [quanyang.github.io](http://quanyang.github.io/x-ctf-fact0r!z3-and-fact0r!z3_aga!n-crypto/)
+Write up: [quanyang.github.io](http://quanyang.github.io/x-ctf-fact0r!z3-and-fact0r!z3_aga!n-crypto/)
 
 More will be posted soon.
