@@ -24,11 +24,6 @@ More information can be found [here](http://www.nusgreyhats.org/x-ctf/).
 
 Many people have been asking for write ups to the challenges in X-CTF 2016. We'll be posting the write ups to challenges incrementally over here, so do check back for updates.
 
-Challenge: Worm  
-Difficulty: Hard  
-Points: 40  
-Write up: [VXSecurity.sg](http://www.vxsecurity.sg/2016/04/15/walkthrough-x-ctf-2016-worm/)
-
 Challenge: xuehui  
 Difficulty: Easy  
 Points: 5  
@@ -48,5 +43,15 @@ Challenge: b0verfl0w
 Difficulty: Moderate  
 Points: 15  
 Write up: [quanyang.github.io](http://quanyang.github.io/x-ctf-b0verfl0w-pwn/)
+
+Challenge: Worm  
+Difficulty: Very Hard  
+Points: 40  
+Write up: [VXSecurity.sg](http://www.vxsecurity.sg/2016/04/15/walkthrough-x-ctf-2016-worm/)
+
+Challenge: The Snek  
+Difficulty: Hard  
+Points: 20  
+Write up: [nandynarwhals.org](http://nandynarwhals.org/2016/05/04/x-ctf-qualifiers-2016-the-snek-web/)
 
 More will be posted soon.
