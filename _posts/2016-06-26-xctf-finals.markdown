@@ -1,0 +1,45 @@
+---
+layout: post
+title: "X-CTF 2016 Finals by NUS Greyhats"
+description: "Write up about X-CTF 2016 Finals"
+modified:
+categories: 
+excerpt:
+author: Xue Hui 
+tags: [X-CTF,CTF]
+image:
+  feature:
+date: 2016-06-26
+comments: true
+share: true
+---
+
+The Cross-Varsity Capture The Flag (X-CTF) competition held on 18 June 2016 was organised by NUS Greyhats. It aims to get the participation of all tertiary institutions in Singapore, as well as allow students from various institutions, with a common interest in security, to interact with each other. At the same time, we hope that students would have fun solving these security challenges.
+
+![Solving the hardware badge challenge](/resources/images/xctf/01.JPG)
+
+Lasting 8 hours, the event saw 22 teams compete for the top 3 prizes. After all the gruelling effort solving the challenges, the following teams emerged victorious:  
+
+![First Place](/resources/images/xctf/first.jpg)
+*<center>First Place: Team Xiia0F1aGGer$ from NUS</center>*  
+
+![Second Place](/resources/images/xctf/second.jpg)
+*<center>Second Place: Team 2x0ffff5ec from NTU</center>*  
+
+![Third Place](/resources/images/xctf/third.jpg)
+*<center>Third Place: Team FengShui from RJC</center>*  
+
+This event would not have been possible without the support of our generous sponsors, as well as all our participants for putting in their time and effort into this competition.  
+
+![Sponsors](/resources/images/xctf/sponsors.jpg)
+*<center>Our Sponsors</center>*
+
+
+Lastly, to my fellow friends in the Greyhats Core Team, good job for all the work done, and ensuring that the whole event could run as smoothly as possible. It was definitely not easy organising an event of this scale, especially for the first time. However, I hope that everyone had fun and learnt many things along the way. 
+
+![Greyhats Core Team](/resources/images/xctf/group_photo.jpg)
+*<center>Greyhats Core Team</center>*  
+
+
+For those who are still interested in trying the challenges, the source code has been made publicly available at [https://github.com/quanyang/x-ctf-2016-finals](https://github.com/quanyang/x-ctf-2016-finals)
+
