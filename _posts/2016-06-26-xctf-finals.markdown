@@ -17,6 +17,7 @@ share: true
 The Cross-Varsity Capture The Flag (X-CTF) competition held on 18 June 2016 was organised by NUS Greyhats. It aims to get the participation of all tertiary institutions in Singapore, as well as allow students from various institutions, with a common interest in security, to interact with each other. At the same time, we hope that students would have fun solving these security challenges.
 
 ![Solving the hardware badge challenge](/resources/images/xctf/01.JPG)
+*<center>Solving the hardware badge challenge</center>*  
 
 Lasting 8 hours, the event saw 22 teams compete for the top 3 prizes. After all the gruelling effort solving the challenges, the following teams emerged victorious:  
 
