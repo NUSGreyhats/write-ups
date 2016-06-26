@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "X-CTF 2016 Finals by NUS Greyhats"
-description: "Write up about X-CTF 2016 Finals"
+description: "X-CTF 2016 Finals"
 modified:
 categories: 
 excerpt:
-author: Xue Hui 
+author: xuehui 
 tags: [X-CTF,CTF]
 image:
   feature:
@@ -35,12 +35,10 @@ This event would not have been possible without the support of our generous spon
 ![Sponsors](/resources/images/xctf/sponsors.jpg)
 *<center>Our Sponsors</center>*
 
-
 Lastly, to my fellow friends in the Greyhats Core Team, good job for all the work done, and ensuring that the whole event could run as smoothly as possible. It was definitely not easy organising an event of this scale, especially for the first time. However, I hope that everyone had fun and learnt many things along the way. 
 
 ![Greyhats Core Team](/resources/images/xctf/group_photo.jpg)
 *<center>Greyhats Core Team</center>*  
-
 
 For those who are still interested in trying the challenges, the source code has been made publicly available at [https://github.com/quanyang/x-ctf-2016-finals](https://github.com/quanyang/x-ctf-2016-finals)
 
