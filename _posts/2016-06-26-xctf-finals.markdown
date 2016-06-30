@@ -32,7 +32,7 @@ Lasting 8 hours, the event saw 22 teams compete for the top 3 prizes. After all 
 
 This event would not have been possible without the support of our generous sponsors, as well as all our participants for putting in their time and effort into this competition.  
 
-![Sponsors](/resources/images/xctf/sponsors.jpg)
+![Sponsors](/resources/images/xctf/sponsors2.jpg)
 *<center>Our Sponsors</center>*
 
 Lastly, here's the team that made this possible and a few others whom has helped tremendously but are not in the picture (they know who they are).
