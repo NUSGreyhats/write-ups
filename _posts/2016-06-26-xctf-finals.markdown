@@ -9,7 +9,7 @@ author: xuehui
 tags: [X-CTF,CTF]
 image:
   feature:
-date: 2016-06-26
+date: 2016-06-30
 comments: true
 share: true
 ---
@@ -35,7 +35,7 @@ This event would not have been possible without the support of our generous spon
 ![Sponsors](/resources/images/xctf/sponsors.jpg)
 *<center>Our Sponsors</center>*
 
-Lastly, to my fellow friends in the Greyhats Core Team, good job for all the work done, and ensuring that the whole event could run as smoothly as possible. It was definitely not easy organising an event of this scale, especially for the first time. However, I hope that everyone had fun and learnt many things along the way. 
+Lastly, here's the team behind the scenes that made this possible and a few others whom has helped tremendously but are not in the picture (they know who they are).
 
 ![Greyhats Core Team](/resources/images/xctf/group_photo.jpg)
 *<center>Greyhats Core Team</center>*  
