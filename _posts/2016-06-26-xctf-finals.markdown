@@ -35,7 +35,7 @@ This event would not have been possible without the support of our generous spon
 ![Sponsors](/resources/images/xctf/sponsors.jpg)
 *<center>Our Sponsors</center>*
 
-Lastly, here's the team behind the scenes that made this possible and a few others whom has helped tremendously but are not in the picture (they know who they are).
+Lastly, here's the team that made this possible and a few others whom has helped tremendously but are not in the picture (they know who they are).
 
 ![Greyhats Core Team](/resources/images/xctf/group_photo.jpg)
 *<center>Greyhats Core Team</center>*  
