@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://nusgreyhats.org/write-ups/feed.xml" />
 <link rel="alternate" type="text/html" href="http://nusgreyhats.org/write-ups" />
-<updated>2016-06-30T22:13:29+02:00</updated>
+<updated>2016-06-30T22:18:55+02:00</updated>
 <id>http://nusgreyhats.org/write-ups/</id>
 <author>
   <name>NUS Greyhats</name>
@@ -29,28 +29,28 @@
   <content type="html">
     &lt;p&gt;The Cross-Varsity Capture The Flag (X-CTF) competition held on 18 June 2016 was organised by NUS Greyhats. It aims to get the participation of all tertiary institutions in Singapore, as well as allow students from various institutions, with a common interest in security, to interact with each other. At the same time, we hope that students would have fun solving these security challenges.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/resources/images/xctf/01.JPG&quot; alt=&quot;Solving the hardware badge challenge&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/write-ups/resources/images/xctf/01.JPG&quot; alt=&quot;Solving the hardware badge challenge&quot; /&gt;
 &lt;em&gt;&lt;center&gt;Solving the hardware badge challenge&lt;/center&gt;&lt;/em&gt;  &lt;/p&gt;
 
 &lt;p&gt;Lasting 8 hours, the event saw 22 teams compete for the top 3 prizes. After all the gruelling effort solving the challenges, the following teams emerged victorious:  &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/resources/images/xctf/first.jpg&quot; alt=&quot;First Place&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/write-ups/resources/images/xctf/first.jpg&quot; alt=&quot;First Place&quot; /&gt;
 &lt;em&gt;&lt;center&gt;First Place: Team Xiia0F1aGGer$ from NUS&lt;/center&gt;&lt;/em&gt;  &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/resources/images/xctf/second.jpg&quot; alt=&quot;Second Place&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/write-ups/resources/images/xctf/second.jpg&quot; alt=&quot;Second Place&quot; /&gt;
 &lt;em&gt;&lt;center&gt;Second Place: Team 2x0ffff5ec from NTU&lt;/center&gt;&lt;/em&gt;  &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/resources/images/xctf/third.jpg&quot; alt=&quot;Third Place&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/write-ups/resources/images/xctf/third.jpg&quot; alt=&quot;Third Place&quot; /&gt;
 &lt;em&gt;&lt;center&gt;Third Place: Team FengShui from RJC&lt;/center&gt;&lt;/em&gt;  &lt;/p&gt;
 
 &lt;p&gt;This event would not have been possible without the support of our generous sponsors, as well as all our participants for putting in their time and effort into this competition.  &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/resources/images/xctf/sponsors2.jpg&quot; alt=&quot;Sponsors&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/write-ups/resources/images/xctf/sponsors2.jpg&quot; alt=&quot;Sponsors&quot; /&gt;
 &lt;em&gt;&lt;center&gt;Our Sponsors&lt;/center&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Lastly, here’s the team that made this possible and a few others whom has helped tremendously but are not in the picture (they know who they are).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/resources/images/xctf/group_photo.jpg&quot; alt=&quot;Greyhats Core Team&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/write-ups/resources/images/xctf/group_photo.jpg&quot; alt=&quot;Greyhats Core Team&quot; /&gt;
 &lt;em&gt;&lt;center&gt;Greyhats Core Team&lt;/center&gt;&lt;/em&gt;  &lt;/p&gt;
 
 &lt;p&gt;For those who are still interested in trying the challenges, the source code has been made publicly available at &lt;a href=&quot;https://github.com/quanyang/x-ctf-2016-finals&quot;&gt;https://github.com/quanyang/x-ctf-2016-finals&lt;/a&gt;&lt;/p&gt;
