@@ -12,7 +12,7 @@ url: //nusgreyhats.org/write-ups
 
 permalink: /:title/
 markdown:    kramdown
-highlighter: rogue
+highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
