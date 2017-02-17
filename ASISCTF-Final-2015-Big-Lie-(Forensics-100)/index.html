@@ -1,0 +1,269 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>ASIS CTF Finals 2015 - Big Lie (Forensics 100) &#8211; NUS Greyhats</title>
+<meta name="description" content="ASIS CTF Finals 2015 Forensics 100. Big Lie.">
+<meta name="keywords" content="CTF, Forensics, ASIS, PCAP">
+
+  
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="ASIS CTF Finals 2015 - Big Lie (Forensics 100)">
+<meta name="twitter:description" content="ASIS CTF Finals 2015 Forensics 100. Big Lie.">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="//nusgreyhats.github.io/write-ups/images/icon.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ASIS CTF Finals 2015 - Big Lie (Forensics 100)">
+<meta property="og:description" content="ASIS CTF Finals 2015 Forensics 100. Big Lie.">
+<meta property="og:url" content="//nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/">
+<meta property="og:site_name" content="NUS Greyhats">
+
+
+
+
+
+<link rel="canonical" href="//nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/">
+<link href="//nusgreyhats.github.io/write-ups/feed.xml" type="application/atom+xml" rel="alternate" title="NUS Greyhats Feed">
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="//nusgreyhats.github.io/write-ups/assets/css/main.css">
+<!-- Webfonts -->
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="//nusgreyhats.github.io/write-ups/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="//nusgreyhats.github.io/write-ups/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<link href="//nusgreyhats.github.io/write-ups/assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<script src="//nusgreyhats.github.io/write-ups/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="//nusgreyhats.github.io/write-ups/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="//nusgreyhats.github.io/write-ups/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="//nusgreyhats.github.io/write-ups/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="//nusgreyhats.github.io/write-ups/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="//nusgreyhats.github.io/write-ups/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="//nusgreyhats.github.io/write-ups/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav class="main-nav-outer animated drop" id="site-nav"><!--main-nav-start-->
+		    <ul class="main-nav">
+		        <li class="small-logo"><a href="//nusgreyhats.github.io/write-ups/../#header"><img src="//nusgreyhats.github.io/write-ups/images/icon.png" alt=""></a></li>
+		        <li><a href="//nusgreyhats.github.io/write-ups/">Write Ups</a></li>
+		        <li><a href="//nusgreyhats.github.io/write-ups/../#security-wednesdays">Security Wednesdays</a></li>
+		        <li><a href="//nusgreyhats.github.io/write-ups/../#the-ctf">The CTF</a></li>
+		        <li><a href="//nusgreyhats.github.io/write-ups/../#team">Team</a></li>
+		        <li><a href="//nusgreyhats.github.io/write-ups/../#contact">Contact</a></li>
+
+		        
+		        <li class="social">
+		            <a href="https://facebook.com/groups/nusgreyhats/" class="facebook"><i class="fa fa-facebook"></i></a>
+		        </li>
+		        
+		    </ul>
+	</nav>
+</div>
+	
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="//nusgreyhats.github.io/write-ups/tags/#CTF" title="Pages tagged CTF">CTF</a>&nbsp;&bull;&nbsp;<a href="//nusgreyhats.github.io/write-ups/tags/#Forensics" title="Pages tagged Forensics">Forensics</a>&nbsp;&bull;&nbsp;<a href="//nusgreyhats.github.io/write-ups/tags/#ASIS" title="Pages tagged ASIS">ASIS</a>&nbsp;&bull;&nbsp;<a href="//nusgreyhats.github.io/write-ups/tags/#PCAP" title="Pages tagged PCAP">PCAP</a></span>
+        
+          <h1 class="entry-title">ASIS CTF Finals 2015 - Big Lie (Forensics 100)</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+          
+              
+          
+              
+          
+              
+                  
+              
+          
+              
+          
+        
+        
+          <img src="//nusgreyhats.github.io/write-ups/images/bio-photo.jpg" class="bio-photo" alt="Quan Yang bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">Quan Yang</span></span>
+        <span class="entry-date date published"><time datetime="2015-10-12T00:00:00+08:00"><i class="fa fa-calendar-o"></i> October 12, 2015</time></span>
+        
+        <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=CTF,Forensics,ASIS,PCAP&amp;text=ASIS%20CTF%20Finals%202015%20-%20Big%20Lie%20(Forensics%20100)&amp;url=//nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/&amp;via=https://twitter.com/quanyang" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=//nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=//nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+      </footer>
+      <div class="entry-content">
+        <p>ASIS CTF 2015 Finals just took place over the weekend of 10,11 October 2015. The finals is open to all, however only qualified teams will be allowed to win the prizes. NUS Greyhats took part in it and solved a few challenges, this is our write-up for some of the challenges from ASIS CTF 2015 Finals. </p>
+
+<h1 id="big-lie">Big Lie</h1>
+<p><strong>Points:</strong>100
+<strong>Category:</strong> Forensics</p>
+
+<p>Find the <a href="//nusgreyhats.github.io/write-ups/resources/files/asis/biglie.pcap">flag</a>.</p>
+
+<p>MD5: c3037269053e61e10a2a2457051519c8</p>
+
+<hr />
+
+<h1 id="our-solution">Our solution</h1>
+
+<p>We are given a pcap file and asked to find the flag. Opening up the pcap file with Wireshark, we then see many HTTP traffic conversations in it.</p>
+
+<p>So, the first thing to do is to filter away redundant packets. I am only looking for HTTP requests URI with the word “asis” in it.
+<code>http.request.uri contains asis</code> </p>
+
+<p><img src="//nusgreyhats.github.io/write-ups/resources/images/asis/biglie/wireshark.png" alt="" height="500px" width="auto" /></p>
+
+<p>We can see this this weird piwik.php request made to a HTTP server, and there seems to be a pastebin url in the GET request.
+<code>http://0bin.asis.io/paste/Vyk5W274#1L8OT3oT7Xr0ryJlS5ASprAqgsQysKeebbSK90gGyQo</code>
+<img src="//nusgreyhats.github.io/write-ups/resources/images/asis/biglie/interesting.png" alt="" height="200px" width="auto" /></p>
+
+<p>Looking at all similar conversations, I found 3 such conversations.</p>
+
+<p>The first one is:
+<code>http://0bin.asis.io/paste/TINcoc0f#-krvZ7lGwZ4e2JQ8n+3dfsMBqyN6Xk6SUzY7i0JKbpo</code>
+<img src="//nusgreyhats.github.io/write-ups/resources/images/asis/biglie/first.png" alt="" height="200px" width="auto" /></p>
+
+<p>The second one is:
+<code>http://0bin.asis.io/paste/Vyk5W274#1L8OT3oT7Xr0ryJlS5ASprAqgsQysKeebbSK90gGyQo</code>
+<img src="//nusgreyhats.github.io/write-ups/resources/images/asis/biglie/second.png" alt="" height="200px" width="auto" /></p>
+
+<p>The third one which gave us our flag is:
+<code>http://0bin.asis.io/paste/1ThAoKv4#Zz-nHPnr0vGGg3s/7/RWD2pnZPZl580x9Y2G3IUehfc</code>
+<img src="//nusgreyhats.github.io/write-ups/resources/images/asis/biglie/preflag.png" alt="" height="200px" width="auto" /></p>
+
+<p>Throwing this into a text editor gives me:
+<img src="//nusgreyhats.github.io/write-ups/resources/images/asis/biglie/flag.png" alt="" height="auto" width="auto" /></p>
+
+<p>And we have our flag: <strong>ASIS{e29a3ef6f1d71d04c5f107eb3c64bbbb}</strong></p>
+
+        
+          <div id="disqus_thread"></div><!-- /#disqus_thread -->
+          
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'nusgreyhat';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="//nusgreyhats.github.io/write-ups/CSAW-CTF-Qual-2015-pcapin-(Forensics-150)/" class="btn" title="CSAW CTF Qualifications 2015 - pcapin (Forensics 150)">Previous</a>
+      
+      
+        <a href="//nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/" class="btn" title="ASIS CTF Finals 2015 - Ultra Compression (Web 125)">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+
+
+<footer class="footer">
+	<div class="container">
+		<span class="copyright">© NUS GreyHats • Theme By W3Goods</span>
+		<div class="social-icons">
+			
+			<a href="https://facebook.com/groups/nusgreyhats/" title="NUS Greyhats on Facebook" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
+			
+			
+			
+			
+			
+			<a href="https://github.com/nusgreyhats" title="NUS Greyhats on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+			
+			
+			
+			<a href="//nusgreyhats.github.io/write-ups/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+		</div><!-- /.social-icons -->
+		<!--Copyright © 2014 Knight Theme By <a href="#">W3Goods</a>.-->
+	</div>
+</footer>
+
+
+<script type="text/javascript">
+  var BASE_URL = '//nusgreyhats.github.io/write-ups';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//nusgreyhats.github.io/write-ups/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67874722-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+</body>
+</html>
