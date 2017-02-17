@@ -12,7 +12,6 @@ master branch contains jekyll files and templates.
 1. Run jekyll build locally on your own machine.
 1. Commit to master branch when done.
 1. cd to _site folder.
-1. Touch .nojekyll file to prevent github from generating any files.
 1. `git pull`
 1. `git checkout gh-pages`
 1. `git add .`
