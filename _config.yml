@@ -11,7 +11,7 @@ url: //nusgreyhats.github.io/write-ups
 # Jekyll configuration
 permalink: /:title/
 markdown:    kramdown
-highlighter: rouge
+highlighter: rogue
 sass:
   sass_dir: _sass
   style: compressed
