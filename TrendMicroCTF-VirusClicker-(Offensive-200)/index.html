@@ -169,81 +169,7 @@
 
 <p>The part of the code that we’re interested in is the onTouchEvent that is called on every press.</p>
 
-<div class="highlight"><pre><code class="language-smali" data-lang="smali"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75</pre></td><td class="code"><pre>.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+<div class="highlight"><pre><code class="language-smali" data-lang="smali">.method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
     const/4 v3, 0x1
     invoke-virtual {p1}, Landroid/view/MotionEvent;-&gt;getAction()I
@@ -285,9 +211,9 @@
     if-ne v0, v1, :cond_2
     :cond_1
     new-instance v0, Landroid/content/Intent;
-    const-string v1, "com.tm.ctf.clicker.SCORE"
+    const-string v1, &quot;com.tm.ctf.clicker.SCORE&quot;
     invoke-direct {v0, v1}, Landroid/content/Intent;-&gt;&lt;init&gt;(Ljava/lang/String;)V
-    const-string v1, "SCORE"
+    const-string v1, &quot;SCORE&quot;
     iget v2, p0, Lcom/tm/ctf/clicker/activity/c;-&gt;g:I
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;-&gt;putExtra(Ljava/lang/String;I)Landroid/content/Intent;
     iget-object v1, p0, Lcom/tm/ctf/clicker/activity/c;-&gt;a:Landroid/content/Context;
@@ -303,7 +229,7 @@
     invoke-static {v2}, Ljava/lang/String;-&gt;valueOf(Ljava/lang/Object;)Ljava/lang/String;
     move-result-object v2
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-&gt;&lt;init&gt;(Ljava/lang/String;)V
-    const-string v2, "Jh"
+    const-string v2, &quot;Jh&quot;
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;-&gt;append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     move-result-object v1
     invoke-virtual {v1}, Ljava/lang/StringBuilder;-&gt;toString()Ljava/lang/String;
@@ -317,34 +243,24 @@
         :pswitch_0
         :pswitch_1
     .end packed-switch
-	.end method<span class="w">
-</span></pre></td></tr></tbody></table>
+	.end method</code></pre></div>
 
+<p>From the code, we can see that something will happen after we hit 0x989680 (10’000’000) clicks.
+Also, it seems that there are “mini-checkpoints” that you’re suppose to hit at 0xeb9, 0x2717, 0xe767, 0x186a3, 0x78e75, 0xf4243, 0x98967f. What I am going to do is to patch the APK such that upon the first touch event, I am going to invoke all the necessary instructions to show me the flag.</p>
 
-
-From the code, we can see that something will happen after we hit 0x989680 (10'000'000) clicks.
-Also, it seems that there are "mini-checkpoints" that you're suppose to hit at 0xeb9, 0x2717, 0xe767, 0x186a3, 0x78e75, 0xf4243, 0x98967f. What I am going to do is to patch the APK such that upon the first touch event, I am going to invoke all the necessary instructions to show me the flag.
-
-
-<div class="highlight"><pre><code class="language-smali" data-lang="smali"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3</pre></td><td class="code"><pre>const v0, 0x989680
+<div class="highlight"><pre><code class="language-smali" data-lang="smali">const v0, 0x989680
     const v1, 0x989680
-    if-gt v0, v1, :cond_0<span class="w">
-</span></pre></td></tr></tbody></table>
+    if-gt v0, v1, :cond_0</code></pre></div>
 
-
-
-The same for all the "mini-checkpoints". 
+<p>The same for all the “mini-checkpoints”. 
 We then use apktool to recompile the smali code back to .apk and then use jarsigner to sign it with a key we generated.
-![](//nusgreyhats.github.io/write-ups/resources/images/apksign.png)
-We then install the "patched" apk onto the BlueStacks emulator and tada! We got the flag!
+<img src="//nusgreyhats.github.io/write-ups/resources/images/apksign.png" alt="" />
+We then install the “patched” apk onto the BlueStacks emulator and tada! We got the flag!</p>
 
-![](//nusgreyhats.github.io/write-ups/resources/images/virusflag.png){: width="200px"}
+<p><img src="//nusgreyhats.github.io/write-ups/resources/images/virusflag.png" alt="" width="200px" /></p>
 
-***TMCTF{Congrats_10MClicks}***
+<p><strong><em>TMCTF{Congrats_10MClicks}</em></strong></p>
 
-</code></pre></div></code></pre></div>
 
         
           <div id="disqus_thread"></div><!-- /#disqus_thread -->

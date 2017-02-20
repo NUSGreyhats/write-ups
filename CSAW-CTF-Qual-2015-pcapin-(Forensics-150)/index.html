@@ -185,113 +185,65 @@ god.pcapng
 malware.exe
 </pre>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12</pre></td><td class="code"><pre><span class="k">for</span> <span class="n">cipher</span> <span class="ow">in</span> <span class="n">response1</span><span class="p">:</span>
-	<span class="n">key</span> <span class="o">=</span> <span class="n">request1</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">":"</span><span class="p">)</span>
-	<span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span>
+<div class="highlight"><pre><code class="language-python" data-lang="python">for cipher in response1:
+	key = request1.split(&quot;:&quot;)
+	key = key[6:]
 	
-	<span class="n">cipher</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">":"</span><span class="p">)</span>
-	<span class="n">cipher</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">[</span><span class="mi">13</span><span class="p">:]</span>
+	cipher = cipher.split(&quot;:&quot;)
+	cipher = cipher[13:]
 
-	<span class="n">ans</span> <span class="o">=</span> <span class="s">""</span>
-	<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cipher</span><span class="p">):</span>
-		<span class="n">xor</span> <span class="o">=</span> <span class="p">(</span><span class="n">hexor</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)],</span><span class="n">c</span><span class="p">))</span>
-		<span class="n">ans</span> <span class="o">+=</span> <span class="n">xor</span>
-	<span class="k">print</span> <span class="n">ans</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"hex"</span><span class="p">)</span><span class="w">
-</span></pre></td></tr></tbody></table>
-
-
+	ans = &quot;&quot;
+	for i,c in enumerate(cipher):
+		xor = (hexor(key[i % len(key)],c))
+		ans += xor
+	print ans[6:-4].decode(&quot;hex&quot;)</code></pre></div>
 
 <p>
 In the output, we noticed that there was a file named "flag.png". We can also see that the last 50 bytes of request 2 is identical to the section of cipher text that gets translated into "flag.png".
 </p>
-<img src="/write-ups/resources/images/wu/csaw2015/pcapin-flagcipher.png" />
+<p><img src="/write-ups/resources/images/wu/csaw2015/pcapin-flagcipher.png" /></p>
 
 <p>
 Thinking that we solved it, we processed all packets in response 2 the same way as how we solve response 1 but it resulted in gibberish data. Since we know that we need a png file, we then tried to "guess" the key by taking the data segment of the first packet in the response and xoring the first 8 bytes with the png header. Getting a series of "3f:50" back, we used it as a key but it again resulted in gibberish data. Undaunted, we again look deeper into the responses and noticed that they all have the same size. However, it is unlikely that the original data can be divided that nicely so it would probably be padded at the end. Looking at the last packet of response 2, we can see a series of "6c:4c" but that is also not the correct key. We then look for differences between packets in response 1 versus those in response 2 and noticed something unusual. In response 1, byte 3,4 are both "00:00" in all instances but in response 2, they are all different. 
 </p>
-<img src="/write-ups/resources/images/wu/csaw2015/pcapin-byte34.png" width="30%" height="30%" />
+<p><img src="/write-ups/resources/images/wu/csaw2015/pcapin-byte34.png" width="30%" height="30%" /></p>
 <p>
 Looking deeper, we realize that f9+45+1 = 13f -&gt; 3f and e9+67=150 -&gt; 50. Again verifying that with the last packet, f9+72+1=16c -&gt; 6c and e9+63=14c -&gt; 4c. Finally, using this new information, we found the flag!.
 </p>
-<img src="/write-ups/resources/images/wu/csaw2015/pcapin-flag.png" />
+<p><img src="/write-ups/resources/images/wu/csaw2015/pcapin-flag.png" /></p>
 <p>A s1mp!3_n37w0rk_c4@113nge that was not simple at all!</p>
 
+<div class="highlight"><pre><code class="language-python" data-lang="python">for cipher in response2:
+    cipher = cipher.split(&quot;:&quot;)
 
+    key = [&quot;f9&quot;,&quot;e9&quot;]
+    k1 = int(key[0],16)
+    k2 = int(key[1],16)
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29</pre></td><td class="code"><pre><span class="k">for</span> <span class="n">cipher</span> <span class="ow">in</span> <span class="n">response2</span><span class="p">:</span>
-    <span class="n">cipher</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">":"</span><span class="p">)</span>
+    a1 = int(cipher[2],16)
+    a2 = int(cipher[3],16)
 
-    <span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="s">"f9"</span><span class="p">,</span><span class="s">"e9"</span><span class="p">]</span>
-    <span class="n">k1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">k2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">16</span><span class="p">)</span>
+    k1 = k1+a1+1
+    k2 = k2+a2
 
-    <span class="n">a1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cipher</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">a2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cipher</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="mi">16</span><span class="p">)</span>
+    key = [hex(k2)[-2:],hex(k1)[-2:]]
 
-    <span class="n">k1</span> <span class="o">=</span> <span class="n">k1</span><span class="o">+</span><span class="n">a1</span><span class="o">+</span><span class="mi">1</span>
-    <span class="n">k2</span> <span class="o">=</span> <span class="n">k2</span><span class="o">+</span><span class="n">a2</span>
+    cipher = cipher[12:]
 
-    <span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="n">k2</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">:],</span><span class="nb">hex</span><span class="p">(</span><span class="n">k1</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]]</span>
+    ans = &quot;&quot;
+    for i,c in enumerate(cipher):
+        xor = (hexor(key[i % len(key)],c))
+        ans += xor
 
-    <span class="n">cipher</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">[</span><span class="mi">12</span><span class="p">:]</span>
+    ans2 += ans
 
-    <span class="n">ans</span> <span class="o">=</span> <span class="s">""</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cipher</span><span class="p">):</span>
-        <span class="n">xor</span> <span class="o">=</span> <span class="p">(</span><span class="n">hexor</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)],</span><span class="n">c</span><span class="p">))</span>
-        <span class="n">ans</span> <span class="o">+=</span> <span class="n">xor</span>
-
-    <span class="n">ans2</span> <span class="o">+=</span> <span class="n">ans</span>
-
-<span class="kn">import</span> <span class="nn">binascii</span>
-<span class="n">hb</span><span class="o">=</span><span class="n">binascii</span><span class="o">.</span><span class="n">a2b_hex</span><span class="p">(</span><span class="n">ans2</span><span class="p">)</span>
-<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">"flag.png"</span><span class="p">,</span><span class="s">"wb"</span><span class="p">)</span>
-<span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">hb</span><span class="p">)</span>
-<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span><span class="w">
-</span></pre></td></tr></tbody></table>
-
-
+import binascii
+hb=binascii.a2b_hex(ans2)
+file = open(&quot;flag.png&quot;,&quot;wb&quot;)
+file.write(hb)
+file.close()</code></pre></div>
 
 <p>Click <a href="/write-ups/resources/files/wu/csaw2015/pcapin_data_raw.txt">here</a> for the raw data found in the pcap.</p>
-</code></pre></div></code></pre></div>
 
         
           <div id="disqus_thread"></div><!-- /#disqus_thread -->

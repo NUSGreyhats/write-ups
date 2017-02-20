@@ -166,245 +166,135 @@ Become admin!<br />
 
 <p>Given the source code of the website, we’re told to get admin. Looking at the source code provided, to be able to print the flag out, we have to get the conditon r[‘admin’] to be equal to true.</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65</pre></td><td class="code"><pre><span class="c1">#!/usr/bin/env ruby</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">#!/usr/bin/env ruby
 
-<span class="nb">require</span> <span class="s1">'sinatra/base'</span>
-<span class="nb">require</span> <span class="s1">'sinatra/cookies'</span>
-<span class="nb">require</span> <span class="s1">'openssl'</span>
-<span class="nb">require</span> <span class="s1">'json'</span>
+require &#39;sinatra/base&#39;
+require &#39;sinatra/cookies&#39;
+require &#39;openssl&#39;
+require &#39;json&#39;
 
-<span class="no">KEY</span> <span class="o">=</span> <span class="no">IO</span><span class="p">.</span><span class="nf">binread</span><span class="p">(</span><span class="s1">'super-secret-key'</span><span class="p">)</span>
-<span class="no">FLAG</span> <span class="o">=</span> <span class="no">IO</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="s1">'/home/simple/flag'</span><span class="p">).</span><span class="nf">strip</span>
+KEY = IO.binread(&#39;super-secret-key&#39;)
+FLAG = IO.read(&#39;/home/simple/flag&#39;).strip
 
-<span class="k">class</span> <span class="nc">SimpleApp</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>
-  <span class="n">helpers</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Cookies</span>
+class SimpleApp &lt; Sinatra::Base
+  helpers Sinatra::Cookies
 
-  <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
-    <span class="n">auth</span> <span class="o">=</span> <span class="n">cookies</span><span class="p">[</span><span class="ss">:auth</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">auth</span>
-      <span class="k">begin</span>
-        <span class="n">auth</span> <span class="o">=</span> <span class="n">auth</span><span class="p">.</span><span class="nf">b</span>
-        <span class="n">c</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">Cipher</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'AES-128-CFB'</span><span class="p">)</span>
-        <span class="n">c</span><span class="p">.</span><span class="nf">decrypt</span>
-        <span class="n">c</span><span class="p">.</span><span class="nf">key</span> <span class="o">=</span> <span class="no">KEY</span>
-        <span class="n">c</span><span class="p">.</span><span class="nf">iv</span> <span class="o">=</span> <span class="n">auth</span><span class="p">[</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="mi">16</span><span class="p">]</span>
-        <span class="n">json</span> <span class="o">=</span> <span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">auth</span><span class="p">[</span><span class="mi">16</span><span class="p">.</span><span class="nf">.</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">c</span><span class="p">.</span><span class="nf">final</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="s1">'admin'</span><span class="p">]</span> <span class="o">==</span> <span class="kp">true</span>
-          <span class="s2">"You're admin! The flag is </span><span class="si">#{</span><span class="no">FLAG</span><span class="si">}</span><span class="s2">"</span>
-        <span class="k">else</span>
-          <span class="s2">"Hi </span><span class="si">#{</span><span class="n">r</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]</span><span class="si">}</span><span class="s2">, try to get admin?"</span>
-        <span class="k">end</span>
-      <span class="k">rescue</span> <span class="no">StandardError</span>
-        <span class="s1">'Something wrong QQ'</span>
-      <span class="k">end</span>
-    <span class="k">else</span>
-      <span class="o">&lt;&lt;-</span><span class="no">EOS</span><span class="sh">
-&lt;html&gt;&lt;body&gt;&lt;form action='/' method='POST'&gt;
-&lt;input type='text' name='username'/&gt;
-&lt;input type='password' name='password'/&gt;
-&lt;button type='submit'&gt;register!&lt;/button&gt;
+  get &#39;/&#39; do
+    auth = cookies[:auth]
+    if auth
+      begin
+        auth = auth.b
+        c = OpenSSL::Cipher.new(&#39;AES-128-CFB&#39;)
+        c.decrypt
+        c.key = KEY
+        c.iv = auth[0...16]
+        json = c.update(auth[16..-1]) + c.final
+        r = JSON.parse(json)
+        if r[&#39;admin&#39;] == true
+          &quot;You&#39;re admin! The flag is #{FLAG}&quot;
+        else
+          &quot;Hi #{r[&#39;username&#39;]}, try to get admin?&quot;
+        end
+      rescue StandardError
+        &#39;Something wrong QQ&#39;
+      end
+    else
+      &lt;&lt;-EOS
+&lt;html&gt;&lt;body&gt;&lt;form action=&#39;/&#39; method=&#39;POST&#39;&gt;
+&lt;input type=&#39;text&#39; name=&#39;username&#39;/&gt;
+&lt;input type=&#39;password&#39; name=&#39;password&#39;/&gt;
+&lt;button type=&#39;submit&#39;&gt;register!&lt;/button&gt;
 &lt;/form&gt;&lt;/body&gt;&lt;/html&gt;
-</span><span class="no">      EOS</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
+      EOS
+    end
+  end
 
-  <span class="n">post</span> <span class="s1">'/'</span> <span class="k">do</span>
-    <span class="n">username</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]</span>
-    <span class="n">password</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">username</span> <span class="o">&amp;&amp;</span> <span class="n">password</span>
-      <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="ss">username: </span><span class="n">username</span><span class="p">,</span>
-        <span class="ss">password: </span><span class="n">password</span><span class="p">,</span>
-        <span class="ss">db: </span><span class="s1">'hitcon-ctf'</span>
-      <span class="p">}</span>
-      <span class="n">c</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">Cipher</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'AES-128-CFB'</span><span class="p">)</span>
-      <span class="n">c</span><span class="p">.</span><span class="nf">encrypt</span>
-      <span class="n">c</span><span class="p">.</span><span class="nf">key</span> <span class="o">=</span> <span class="no">KEY</span>
-      <span class="n">iv</span> <span class="o">=</span> <span class="n">c</span><span class="p">.</span><span class="nf">random_iv</span>
-      <span class="n">json</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-      <span class="n">enc</span> <span class="o">=</span> <span class="n">c</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">json</span><span class="p">)</span> <span class="o">+</span> <span class="n">c</span><span class="p">.</span><span class="nf">final</span>
-      <span class="n">cookies</span><span class="p">[</span><span class="ss">:auth</span><span class="p">]</span> <span class="o">=</span> <span class="n">iv</span> <span class="o">+</span> <span class="n">enc</span>
-      <span class="n">redirect</span> <span class="n">to</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-    <span class="k">else</span>
-      <span class="s1">'Invalid input!'</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span><span class="w">
-</span></pre></td></tr></tbody></table>
+  post &#39;/&#39; do
+    username = params[&#39;username&#39;]
+    password = params[&#39;password&#39;]
+    if username &amp;&amp; password
+      data = {
+        username: username,
+        password: password,
+        db: &#39;hitcon-ctf&#39;
+      }
+      c = OpenSSL::Cipher.new(&#39;AES-128-CFB&#39;)
+      c.encrypt
+      c.key = KEY
+      iv = c.random_iv
+      json = JSON.dump(data)
+      enc = c.update(json) + c.final
+      cookies[:auth] = iv + enc
+      redirect to(&#39;/&#39;)
+    else
+      &#39;Invalid input!&#39;
+    end
+  end
+end</code></pre></div>
 
+<p>It seems that the IV used as well as the encrypted json is kept in the client’s cookie, and that the same cookie is used to determine if you’re an admin. (This indicates that if we can spoof the encrypted json, we can become admin)</p>
 
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/CFB_encryption.svg/1202px-CFB_encryption.svg.png" alt="" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/CFB_decryption.svg/1202px-CFB_decryption.svg.png" alt="" /></p>
 
-It seems that the IV used as well as the encrypted json is kept in the client's cookie, and that the same cookie is used to determine if you're an admin. (This indicates that if we can spoof the encrypted json, we can become admin)
+<p>AES-128 in CFB mode has a block size of 16 bytes.<br />
+Simply put,<br />
+Ciphertext of block #1 = E(IV, key) ^ Plaintext</p>
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/CFB_encryption.svg/1202px-CFB_encryption.svg.png)
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/CFB_decryption.svg/1202px-CFB_decryption.svg.png)
+<p>Therefore, with knowledge of plaintext and ciphertext, we are able to obtain E(IV, key) and to forge for the first block of cipher text.</p>
 
-AES-128 in CFB mode has a block size of 16 bytes.  
-Simply put,  
-Ciphertext of block #1 = E(IV, key) ^ Plaintext
+<p>With a username and password of b, the Plaintext of the first block will be<br />
+<code>{"username":"b",</code><br />
+and we’ll use that knowledge to obtain our E(IV, key)  </p>
 
-Therefore, with knowledge of plaintext and ciphertext, we are able to obtain E(IV, key) and to forge for the first block of cipher text.
+<p>This is our exploit script that forges our first block to be:
+<code>{"admin": true }</code><br />
+and allows us to obtain our flag!</p>
 
-With a username and password of b, the Plaintext of the first block will be  
-`{"username":"b",`  
-and we'll use that knowledge to obtain our E(IV, key)  
+<div class="highlight"><pre><code class="language-python" data-lang="python">import requests
+import urllib
 
-This is our exploit script that forges our first block to be:
-`{"admin": true }`  
-and allows us to obtain our flag!
+def main():
 
+    original_cookie = &quot;\xE9a\x89\xEC\xC7\x7C\xBC\x15\x92\xAD\xF8\x17\xF8\x40&quot; \
+                      &quot;wV\xAB524\xF2\xF5UA\xE8\x1A\x29\xD4\xCB\xFA\xF6\xB3&quot; \
+                      &quot;\x95h\x2B\x0D\xF4\xB9\xC8\xDB\xF8n\xB9o\xBES\x11d\xA3&quot; \
+                      &quot;9\xA3c\x3Fi\xE7\xFA\x1C\xD0\xDBk\xDD\xD2_6\x06&quot;
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">urllib</span>
+    original_cookie = original_cookie.encode(&#39;hex&#39;)
+    iv = original_cookie[0:32]
+    first_16_byte_block = original_cookie[32:64]
+    print &quot;IV: %s&quot; % iv
+    print &quot;First Block: %s&quot; % first_16_byte_block
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    #Plain text of first 16 byte block.
+    plaintext =&#39;{&quot;username&quot;:&quot;b&quot;,&#39;
 
-    <span class="n">original_cookie</span> <span class="o">=</span> <span class="s">"</span><span class="se">\xE9</span><span class="s">a</span><span class="se">\x89\xEC\xC7\x7C\xBC\x15\x92\xAD\xF8\x17\xF8\x40</span><span class="s">"</span> \
-                      <span class="s">"wV</span><span class="se">\xAB</span><span class="s">524</span><span class="se">\xF2\xF5</span><span class="s">UA</span><span class="se">\xE8\x1A\x29\xD4\xCB\xFA\xF6\xB3</span><span class="s">"</span> \
-                      <span class="s">"</span><span class="se">\x95</span><span class="s">h</span><span class="se">\x2B\x0D\xF4\xB9\xC8\xDB\xF8</span><span class="s">n</span><span class="se">\xB9</span><span class="s">o</span><span class="se">\xBE</span><span class="s">S</span><span class="se">\x11</span><span class="s">d</span><span class="se">\xA3</span><span class="s">"</span> \
-                      <span class="s">"9</span><span class="se">\xA3</span><span class="s">c</span><span class="se">\x3F</span><span class="s">i</span><span class="se">\xE7\xFA\x1C\xD0\xDB</span><span class="s">k</span><span class="se">\xDD\xD2</span><span class="s">_6</span><span class="se">\x06</span><span class="s">"</span>
+    encrypted_iv = int(plaintext.encode(&#39;hex&#39;),16) ^ int(first_16_byte_block,16)
+    encrypted_iv = hex(encrypted_iv)[2:-1]
+    print &quot;Encrypted IV: %s&quot; % encrypted_iv
 
-    <span class="n">original_cookie</span> <span class="o">=</span> <span class="n">original_cookie</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'hex'</span><span class="p">)</span>
-    <span class="n">iv</span> <span class="o">=</span> <span class="n">original_cookie</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">32</span><span class="p">]</span>
-    <span class="n">first_16_byte_block</span> <span class="o">=</span> <span class="n">original_cookie</span><span class="p">[</span><span class="mi">32</span><span class="p">:</span><span class="mi">64</span><span class="p">]</span>
-    <span class="k">print</span> <span class="s">"IV: </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">iv</span>
-    <span class="k">print</span> <span class="s">"First Block: </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">first_16_byte_block</span>
+    #The text I want to forge in the first block.
+    forge_text = &#39;{&quot;admin&quot;: true }&#39;
 
-    <span class="c">#Plain text of first 16 byte block.</span>
-    <span class="n">plaintext</span> <span class="o">=</span><span class="s">'{"username":"b",'</span>
+    print &#39;Encrypting payload...&#39;
 
-    <span class="n">encrypted_iv</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">plaintext</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'hex'</span><span class="p">),</span><span class="mi">16</span><span class="p">)</span> <span class="o">^</span> <span class="nb">int</span><span class="p">(</span><span class="n">first_16_byte_block</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">encrypted_iv</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="n">encrypted_iv</span><span class="p">)[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">print</span> <span class="s">"Encrypted IV: </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">encrypted_iv</span>
+    payload = int(forge_text.encode(&#39;hex&#39;),16) ^ int(encrypted_iv,16)
+    payload = hex(payload)[2:-1]
+    payload = iv + payload
+    print &quot;PAYLOAD: %s&quot; % payload
 
-    <span class="c">#The text I want to forge in the first block.</span>
-    <span class="n">forge_text</span> <span class="o">=</span> <span class="s">'{"admin": true }'</span>
+    cookie = {&quot;auth&quot;: payload.decode(&quot;hex&quot;)}
+    r = requests.get(&quot;http://52.69.244.164:51913/&quot;, cookies=cookie)
+    print &quot;Flag: %s&quot; % r.text
 
-    <span class="k">print</span> <span class="s">'Encrypting payload...'</span>
+if __name__ == &quot;__main__&quot;:
+    main()</code></pre></div>
 
-    <span class="n">payload</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">forge_text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'hex'</span><span class="p">),</span><span class="mi">16</span><span class="p">)</span> <span class="o">^</span> <span class="nb">int</span><span class="p">(</span><span class="n">encrypted_iv</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">payload</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="n">payload</span><span class="p">)[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">payload</span> <span class="o">=</span> <span class="n">iv</span> <span class="o">+</span> <span class="n">payload</span>
-    <span class="k">print</span> <span class="s">"PAYLOAD: </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">payload</span>
+<p>Running the script gives us:
+<img src="//nusgreyhats.github.io/write-ups/resources/images/hitcon/simple/flag.png" alt="" /></p>
 
-    <span class="n">cookie</span> <span class="o">=</span> <span class="p">{</span><span class="s">"auth"</span><span class="p">:</span> <span class="n">payload</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"hex"</span><span class="p">)}</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://52.69.244.164:51913/"</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="n">cookie</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s">"Flag: </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span><span class="w">
-</span></pre></td></tr></tbody></table>
-
-
-
-Running the script gives us:
-![](//nusgreyhats.github.io/write-ups/resources/images/hitcon/simple/flag.png)
-
-And we have our flag: **hitcon{WoW_CFB_m0dE_5o_eAsY}**
-</code></pre></div></code></pre></div>
+<p>And we have our flag: <strong>hitcon{WoW_CFB_m0dE_5o_eAsY}</strong></p>
 
         
           <div id="disqus_thread"></div><!-- /#disqus_thread -->
