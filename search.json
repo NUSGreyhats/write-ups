@@ -3,7 +3,7 @@
   
     {
       "title"			: "X-CTF 2016 Finals by NUS Greyhats",
-      "link"			: "//nusgreyhats.github.io/write-ups/xctf-finals/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/xctf-finals/",
       "excerpt"		: ""
     }
   
@@ -11,7 +11,7 @@
   
     ,{
       "title"			: "Write ups for X-CTF 2016 Qualifiers by NUS Greyhats",
-      "link"			: "//nusgreyhats.github.io/write-ups/x-ctf-2016-qualifiers-by-nus-greyhats/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/x-ctf-2016-qualifiers-by-nus-greyhats/",
       "excerpt"		: ""
     }
   
@@ -19,7 +19,7 @@
   
     ,{
       "title"			: "INSOMNIHACK CTF Teaser 2016 Write Up - Smartcat1",
-      "link"			: "//nusgreyhats.github.io/write-ups/INSOMNIHACK-CTF-Teaser-2016-Write-Up-Smartcat1/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/INSOMNIHACK-CTF-Teaser-2016-Write-Up-Smartcat1/",
       "excerpt"		: ""
     }
   
@@ -27,7 +27,7 @@
   
     ,{
       "title"			: "32C3 CTF - Flash (Reversing 300)",
-      "link"			: "//nusgreyhats.github.io/write-ups/32C3-CTF-Flash-(Reversing-300)/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/32C3-CTF-Flash-(Reversing-300)/",
       "excerpt"		: ""
     }
   
@@ -35,7 +35,7 @@
   
     ,{
       "title"			: "HITCON CTF Quals 2015 - Simple (Crypto 100)",
-      "link"			: "//nusgreyhats.github.io/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/",
       "excerpt"		: ""
     }
   
@@ -43,7 +43,7 @@
   
     ,{
       "title"			: "ASIS CTF Finals 2015 - Ultra Compression (Web 125)",
-      "link"			: "//nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/",
       "excerpt"		: ""
     }
   
@@ -51,7 +51,7 @@
   
     ,{
       "title"			: "ASIS CTF Finals 2015 - Big Lie (Forensics 100)",
-      "link"			: "//nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/",
       "excerpt"		: ""
     }
   
@@ -59,7 +59,7 @@
   
     ,{
       "title"			: "CSAW CTF Qualifications 2015 - pcapin (Forensics 150)",
-      "link"			: "//nusgreyhats.github.io/write-ups/CSAW-CTF-Qual-2015-pcapin-(Forensics-150)/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/CSAW-CTF-Qual-2015-pcapin-(Forensics-150)/",
       "excerpt"		: ""
     }
   
@@ -67,7 +67,7 @@
   
     ,{
       "title"			: "TrendMicroCTF - VirusClicker (Offensive 200)",
-      "link"			: "//nusgreyhats.github.io/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/",
       "excerpt"		: ""
     }
   
@@ -75,7 +75,7 @@
   
     ,{
       "title"			: "TrendMicroCTF - 500 Captchas! (Misc 300)",
-      "link"			: "//nusgreyhats.github.io/write-ups/TrendMicroCTF-500-Captchas!-(Misc-300)/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/TrendMicroCTF-500-Captchas!-(Misc-300)/",
       "excerpt"		: ""
     }
   
@@ -83,7 +83,7 @@
   
     ,{
       "title"			: "Capture The Flag 101 Workshop",
-      "link"			: "//nusgreyhats.github.io/write-ups/Capture-The-Flag-101-Workshop/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/Capture-The-Flag-101-Workshop/",
       "excerpt"		: ""
     }
   
@@ -91,7 +91,7 @@
   
     ,{
       "title"			: "POLICTF 2015 Write Up - John the Traveller (Web)",
-      "link"			: "//nusgreyhats.github.io/write-ups/polictf-2015-write-up-john-the-traveller-(web)/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/polictf-2015-write-up-john-the-traveller-(web)/",
       "excerpt"		: ""
     }
   
@@ -115,7 +115,7 @@
   
     ,{
       "title"			: "junhao",
-      "link"			: "//nusgreyhats.github.io/write-ups/authors/junhao/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/authors/junhao/",
       "excerpt"		: ""
     }
   
@@ -123,7 +123,7 @@
   
     ,{
       "title"			: "quanyang",
-      "link"			: "//nusgreyhats.github.io/write-ups/authors/quanyang/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/authors/quanyang/",
       "excerpt"		: ""
     }
   
@@ -131,7 +131,7 @@
   
     ,{
       "title"			: "quanyang",
-      "link"			: "//nusgreyhats.github.io/write-ups/authors/quanyang/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/authors/quanyang/",
       "excerpt"		: ""
     }
   
@@ -139,7 +139,7 @@
   
     ,{
       "title"			: "quanyang",
-      "link"			: "//nusgreyhats.github.io/write-ups/authors/quanyang/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/authors/quanyang/",
       "excerpt"		: ""
     }
   
@@ -147,7 +147,7 @@
   
     ,{
       "title"			: "anselm",
-      "link"			: "//nusgreyhats.github.io/write-ups/authors/anselm/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/authors/anselm/",
       "excerpt"		: ""
     }
   
@@ -155,7 +155,7 @@
   
     ,{
       "title"			: "quanyang",
-      "link"			: "//nusgreyhats.github.io/write-ups/authors/quanyang/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/authors/quanyang/",
       "excerpt"		: ""
     }
   
@@ -163,7 +163,7 @@
   
     ,{
       "title"			: "quanyang",
-      "link"			: "//nusgreyhats.github.io/write-ups/authors/quanyang/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/authors/quanyang/",
       "excerpt"		: ""
     }
   
@@ -171,7 +171,7 @@
   
     ,{
       "title"			: "quanyang",
-      "link"			: "//nusgreyhats.github.io/write-ups/authors/quanyang/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/authors/quanyang/",
       "excerpt"		: ""
     }
   
@@ -179,7 +179,7 @@
   
     ,{
       "title"			: "quanyang",
-      "link"			: "//nusgreyhats.github.io/write-ups/authors/quanyang/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/authors/quanyang/",
       "excerpt"		: ""
     }
   
@@ -187,7 +187,7 @@
   
     ,{
       "title"			: "xuehui",
-      "link"			: "//nusgreyhats.github.io/write-ups/authors/xuehui/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/authors/xuehui/",
       "excerpt"		: ""
     }
   
@@ -195,7 +195,7 @@
   
     ,{
       "title"			: "quanyang",
-      "link"			: "//nusgreyhats.github.io/write-ups/authors/quanyang/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/authors/quanyang/",
       "excerpt"		: ""
     }
   
@@ -203,7 +203,7 @@
   
     ,{
       "title"			: "xuehui",
-      "link"			: "//nusgreyhats.github.io/write-ups/authors/xuehui/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/authors/xuehui/",
       "excerpt"		: ""
     }
   
@@ -211,7 +211,7 @@
   
     ,{
       "title"			: "Monthly archive for 2015/8",
-      "link"			: "//nusgreyhats.github.io/write-ups/2015/08/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/2015/08/",
       "excerpt"		: ""
     }
   
@@ -219,7 +219,7 @@
   
     ,{
       "title"			: "Monthly archive for 2015/10",
-      "link"			: "//nusgreyhats.github.io/write-ups/2015/10/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/2015/10/",
       "excerpt"		: ""
     }
   
@@ -227,7 +227,7 @@
   
     ,{
       "title"			: "Monthly archive for 2015/12",
-      "link"			: "//nusgreyhats.github.io/write-ups/2015/12/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/2015/12/",
       "excerpt"		: ""
     }
   
@@ -235,7 +235,7 @@
   
     ,{
       "title"			: "Monthly archive for 2016/1",
-      "link"			: "//nusgreyhats.github.io/write-ups/2016/01/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/2016/01/",
       "excerpt"		: ""
     }
   
@@ -243,7 +243,7 @@
   
     ,{
       "title"			: "Monthly archive for 2016/4",
-      "link"			: "//nusgreyhats.github.io/write-ups/2016/04/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/2016/04/",
       "excerpt"		: ""
     }
   
@@ -251,7 +251,7 @@
   
     ,{
       "title"			: "Monthly archive for 2016/6",
-      "link"			: "//nusgreyhats.github.io/write-ups/2016/06/",
+      "link"			: "https://nusgreyhats.github.io/write-ups/2016/06/",
       "excerpt"		: ""
     }
   

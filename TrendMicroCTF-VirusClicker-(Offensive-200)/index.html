@@ -18,29 +18,29 @@
 
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="//nusgreyhats.github.io/write-ups/images/icon.png">
+<meta name="twitter:image" content="https://nusgreyhats.github.io/write-ups/images/icon.png">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TrendMicroCTF - VirusClicker (Offensive 200)">
 <meta property="og:description" content="TrendMicro CTF 2015 Offensive 200. VirusClicker Android APK.">
-<meta property="og:url" content="//nusgreyhats.github.io/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/">
+<meta property="og:url" content="https://nusgreyhats.github.io/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/">
 <meta property="og:site_name" content="NUS Greyhats">
 
 
 
 
 
-<link rel="canonical" href="//nusgreyhats.github.io/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/">
-<link href="//nusgreyhats.github.io/write-ups/feed.xml" type="application/atom+xml" rel="alternate" title="NUS Greyhats Feed">
+<link rel="canonical" href="https://nusgreyhats.github.io/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/">
+<link href="https://nusgreyhats.github.io/write-ups/feed.xml" type="application/atom+xml" rel="alternate" title="NUS Greyhats Feed">
 
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="//nusgreyhats.github.io/write-ups/assets/css/main.css">
+<link rel="stylesheet" href="https://nusgreyhats.github.io/write-ups/assets/css/main.css">
 <!-- Webfonts -->
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
@@ -49,13 +49,13 @@
 
 <!-- HTML5 Shiv and Media Query Support -->
 <!--[if lt IE 9]>
-  <script src="//nusgreyhats.github.io/write-ups/assets/js/vendor/html5shiv.min.js"></script>
-  <script src="//nusgreyhats.github.io/write-ups/assets/js/vendor/respond.min.js"></script>
+  <script src="https://nusgreyhats.github.io/write-ups/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="https://nusgreyhats.github.io/write-ups/assets/js/vendor/respond.min.js"></script>
 <![endif]-->
 
 <!-- Modernizr -->
-<link href="//nusgreyhats.github.io/write-ups/assets/css/font-awesome.css" rel="stylesheet" type="text/css">
-<script src="//nusgreyhats.github.io/write-ups/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+<link href="https://nusgreyhats.github.io/write-ups/assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<script src="https://nusgreyhats.github.io/write-ups/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
 
 
 <!-- MathJax -->
@@ -64,17 +64,17 @@
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="//nusgreyhats.github.io/write-ups/favicon.ico">
+<link rel="shortcut icon" href="https://nusgreyhats.github.io/write-ups/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="//nusgreyhats.github.io/write-ups/favicon.png">
+<link rel="shortcut icon" href="https://nusgreyhats.github.io/write-ups/favicon.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="//nusgreyhats.github.io/write-ups/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="https://nusgreyhats.github.io/write-ups/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="//nusgreyhats.github.io/write-ups/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://nusgreyhats.github.io/write-ups/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="//nusgreyhats.github.io/write-ups/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://nusgreyhats.github.io/write-ups/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="//nusgreyhats.github.io/write-ups/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://nusgreyhats.github.io/write-ups/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 
@@ -83,12 +83,12 @@
 <div class="navigation-wrapper">
 	<nav class="main-nav-outer animated drop" id="site-nav"><!--main-nav-start-->
 		    <ul class="main-nav">
-		        <li class="small-logo"><a href="//nusgreyhats.github.io/write-ups/../#header"><img src="//nusgreyhats.github.io/write-ups/images/icon.png" alt=""></a></li>
-		        <li><a href="//nusgreyhats.github.io/write-ups/">Write Ups</a></li>
-		        <li><a href="//nusgreyhats.github.io/write-ups/../#security-wednesdays">Security Wednesdays</a></li>
-		        <li><a href="//nusgreyhats.github.io/write-ups/../#the-ctf">The CTF</a></li>
-		        <li><a href="//nusgreyhats.github.io/write-ups/../#team">Team</a></li>
-		        <li><a href="//nusgreyhats.github.io/write-ups/../#contact">Contact</a></li>
+		        <li class="small-logo"><a href="https://nusgreyhats.github.io/write-ups/../#header"><img src="https://nusgreyhats.github.io/write-ups/images/icon.png" alt=""></a></li>
+		        <li><a href="https://nusgreyhats.github.io/write-ups/">Write Ups</a></li>
+		        <li><a href="https://nusgreyhats.github.io/write-ups/../#security-wednesdays">Security Wednesdays</a></li>
+		        <li><a href="https://nusgreyhats.github.io/write-ups/../#the-ctf">The CTF</a></li>
+		        <li><a href="https://nusgreyhats.github.io/write-ups/../#team">Team</a></li>
+		        <li><a href="https://nusgreyhats.github.io/write-ups/../#contact">Contact</a></li>
 
 		        
 		        <li class="social">
@@ -108,7 +108,7 @@
     
     <div class="entry-wrapper">
       <header class="entry-header">
-        <span class="entry-tags"><a href="//nusgreyhats.github.io/write-ups/tags/#CTF" title="Pages tagged CTF">CTF</a>&nbsp;&bull;&nbsp;<a href="//nusgreyhats.github.io/write-ups/tags/#TRENDMICRO" title="Pages tagged TRENDMICRO">TRENDMICRO</a>&nbsp;&bull;&nbsp;<a href="//nusgreyhats.github.io/write-ups/tags/#APK" title="Pages tagged APK">APK</a>&nbsp;&bull;&nbsp;<a href="//nusgreyhats.github.io/write-ups/tags/#ANDROID" title="Pages tagged ANDROID">ANDROID</a></span>
+        <span class="entry-tags"><a href="https://nusgreyhats.github.io/write-ups/tags/#CTF" title="Pages tagged CTF">CTF</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.github.io/write-ups/tags/#TRENDMICRO" title="Pages tagged TRENDMICRO">TRENDMICRO</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.github.io/write-ups/tags/#APK" title="Pages tagged APK">APK</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.github.io/write-ups/tags/#ANDROID" title="Pages tagged ANDROID">ANDROID</a></span>
         
           <h1 class="entry-title">TrendMicroCTF - VirusClicker (Offensive 200)</h1>
         
@@ -128,20 +128,20 @@
           
         
         
-          <img src="//nusgreyhats.github.io/write-ups/images/bio-photo.jpg" class="bio-photo" alt="Quan Yang bio photo"></a>
+          <img src="https://nusgreyhats.github.io/write-ups/images/bio-photo.jpg" class="bio-photo" alt="Quan Yang bio photo"></a>
         
         <span class="author vcard">By <span class="fn">Quan Yang</span></span>
         <span class="entry-date date published"><time datetime="2015-10-08T00:00:00+08:00"><i class="fa fa-calendar-o"></i> October 08, 2015</time></span>
         
         <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>
         <span class="social-share-twitter">
-  <a href="https://twitter.com/intent/tweet?hashtags=CTF,TRENDMICRO,APK,ANDROID&amp;text=TrendMicroCTF%20-%20VirusClicker%20(Offensive%20200)&amp;url=//nusgreyhats.github.io/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/&amp;via=https://twitter.com/quanyang" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+  <a href="https://twitter.com/intent/tweet?hashtags=CTF,TRENDMICRO,APK,ANDROID&amp;text=TrendMicroCTF%20-%20VirusClicker%20(Offensive%20200)&amp;url=https://nusgreyhats.github.io/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/&amp;via=https://twitter.com/quanyang" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
 </span>
 <span class="social-share-facebook">
-  <a href="https://www.facebook.com/sharer/sharer.php?u=//nusgreyhats.github.io/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://nusgreyhats.github.io/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
 </span>
 <span class="social-share-googleplus">
-  <a href="https://plus.google.com/share?url=//nusgreyhats.github.io/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+  <a href="https://plus.google.com/share?url=https://nusgreyhats.github.io/write-ups/TrendMicroCTF-VirusClicker-(Offensive-200)/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
 </span>
 <!-- /.social-share -->
         
@@ -151,7 +151,7 @@
 <p><strong><em>Points:</em></strong> 200 <strong><em>Category:</em></strong> Offensive </p>
 
 <p><strong><em>Description:</em></strong>
-<a href="//nusgreyhats.github.io/write-ups/resources/files/VirusClicker.apk">VirusClicker</a></p>
+<a href="https://nusgreyhats.github.io/write-ups/resources/files/VirusClicker.apk">VirusClicker</a></p>
 
 <p>MD5: 1a0462c2bc27bdd3a5045036c36c3e31</p>
 
@@ -160,12 +160,12 @@
 
 <p>After downloading the APK and installing it on my BlueStacks Emulator, you see this screen that requires us to press on the button for 10’000’000 times…</p>
 
-<p><img src="//nusgreyhats.github.io/write-ups/resources/images/virusclicker.png" alt="" height="300px" width="200px" />
-<img src="//nusgreyhats.github.io/write-ups/resources/images/10mclicks.png" alt="" height="300px" width="200px" /></p>
+<p><img src="https://nusgreyhats.github.io/write-ups/resources/images/virusclicker.png" alt="" height="300px" width="200px" />
+<img src="https://nusgreyhats.github.io/write-ups/resources/images/10mclicks.png" alt="" height="300px" width="200px" /></p>
 
 <p>We first use apktool to decompile the apk into the respective smali code. </p>
 
-<p><img src="//nusgreyhats.github.io/write-ups/resources/images/apkdecode.png" alt="" width="auto" /></p>
+<p><img src="https://nusgreyhats.github.io/write-ups/resources/images/apkdecode.png" alt="" width="auto" /></p>
 
 <p>The part of the code that we’re interested in is the onTouchEvent that is called on every press.</p>
 
@@ -254,10 +254,10 @@ Also, it seems that there are “mini-checkpoints” that you’re suppose to hi
 
 <p>The same for all the “mini-checkpoints”. 
 We then use apktool to recompile the smali code back to .apk and then use jarsigner to sign it with a key we generated.
-<img src="//nusgreyhats.github.io/write-ups/resources/images/apksign.png" alt="" />
+<img src="https://nusgreyhats.github.io/write-ups/resources/images/apksign.png" alt="" />
 We then install the “patched” apk onto the BlueStacks emulator and tada! We got the flag!</p>
 
-<p><img src="//nusgreyhats.github.io/write-ups/resources/images/virusflag.png" alt="" width="200px" /></p>
+<p><img src="https://nusgreyhats.github.io/write-ups/resources/images/virusflag.png" alt="" width="200px" /></p>
 
 <p><strong><em>TMCTF{Congrats_10MClicks}</em></strong></p>
 
@@ -281,10 +281,10 @@ We then install the “patched” apk onto the BlueStacks emulator and tada! We 
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
       
-        <a href="//nusgreyhats.github.io/write-ups/TrendMicroCTF-500-Captchas!-(Misc-300)/" class="btn" title="TrendMicroCTF - 500 Captchas! (Misc 300)">Previous</a>
+        <a href="https://nusgreyhats.github.io/write-ups/TrendMicroCTF-500-Captchas!-(Misc-300)/" class="btn" title="TrendMicroCTF - 500 Captchas! (Misc 300)">Previous</a>
       
       
-        <a href="//nusgreyhats.github.io/write-ups/CSAW-CTF-Qual-2015-pcapin-(Forensics-150)/" class="btn" title="CSAW CTF Qualifications 2015 - pcapin (Forensics 150)">Next</a>
+        <a href="https://nusgreyhats.github.io/write-ups/CSAW-CTF-Qual-2015-pcapin-(Forensics-150)/" class="btn" title="CSAW CTF Qualifications 2015 - pcapin (Forensics 150)">Next</a>
       
     </nav><!-- /.pagination -->
   </article>
@@ -307,7 +307,7 @@ We then install the “patched” apk onto the BlueStacks emulator and tada! We 
 			
 			
 			
-			<a href="//nusgreyhats.github.io/write-ups/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+			<a href="https://nusgreyhats.github.io/write-ups/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
 		</div><!-- /.social-icons -->
 		<!--Copyright © 2014 Knight Theme By <a href="#">W3Goods</a>.-->
 	</div>
@@ -315,11 +315,11 @@ We then install the “patched” apk onto the BlueStacks emulator and tada! We 
 
 
 <script type="text/javascript">
-  var BASE_URL = '//nusgreyhats.github.io/write-ups';
+  var BASE_URL = 'https://nusgreyhats.github.io/write-ups';
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="//nusgreyhats.github.io/write-ups/assets/js/scripts.min.js"></script>
+<script src="https://nusgreyhats.github.io/write-ups/assets/js/scripts.min.js"></script>
 
 
 <!-- Asynchronous Google Analytics snippet -->
