@@ -18,29 +18,29 @@
 
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://nusgreyhats.github.io/write-ups/images/icon.png">
+<meta name="twitter:image" content="https://nusgreyhats.org/write-ups/images/icon.png">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HITCON CTF Quals 2015 - Simple (Crypto 100)">
 <meta property="og:description" content="HITCON CTF Quals 2015. Simple - Crypto 100">
-<meta property="og:url" content="https://nusgreyhats.github.io/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/">
+<meta property="og:url" content="https://nusgreyhats.org/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/">
 <meta property="og:site_name" content="NUS Greyhats">
 
 
 
 
 
-<link rel="canonical" href="https://nusgreyhats.github.io/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/">
-<link href="https://nusgreyhats.github.io/write-ups/feed.xml" type="application/atom+xml" rel="alternate" title="NUS Greyhats Feed">
+<link rel="canonical" href="https://nusgreyhats.org/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/">
+<link href="https://nusgreyhats.org/write-ups/feed.xml" type="application/atom+xml" rel="alternate" title="NUS Greyhats Feed">
 
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="https://nusgreyhats.github.io/write-ups/assets/css/main.css">
+<link rel="stylesheet" href="https://nusgreyhats.org/write-ups/assets/css/main.css">
 <!-- Webfonts -->
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
@@ -49,13 +49,13 @@
 
 <!-- HTML5 Shiv and Media Query Support -->
 <!--[if lt IE 9]>
-  <script src="https://nusgreyhats.github.io/write-ups/assets/js/vendor/html5shiv.min.js"></script>
-  <script src="https://nusgreyhats.github.io/write-ups/assets/js/vendor/respond.min.js"></script>
+  <script src="https://nusgreyhats.org/write-ups/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="https://nusgreyhats.org/write-ups/assets/js/vendor/respond.min.js"></script>
 <![endif]-->
 
 <!-- Modernizr -->
-<link href="https://nusgreyhats.github.io/write-ups/assets/css/font-awesome.css" rel="stylesheet" type="text/css">
-<script src="https://nusgreyhats.github.io/write-ups/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+<link href="https://nusgreyhats.org/write-ups/assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<script src="https://nusgreyhats.org/write-ups/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
 
 
 <!-- MathJax -->
@@ -64,17 +64,17 @@
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="https://nusgreyhats.github.io/write-ups/favicon.ico">
+<link rel="shortcut icon" href="https://nusgreyhats.org/write-ups/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="https://nusgreyhats.github.io/write-ups/favicon.png">
+<link rel="shortcut icon" href="https://nusgreyhats.org/write-ups/favicon.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="https://nusgreyhats.github.io/write-ups/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="https://nusgreyhats.org/write-ups/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://nusgreyhats.github.io/write-ups/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://nusgreyhats.org/write-ups/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://nusgreyhats.github.io/write-ups/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://nusgreyhats.org/write-ups/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://nusgreyhats.github.io/write-ups/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://nusgreyhats.org/write-ups/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 
@@ -83,12 +83,12 @@
 <div class="navigation-wrapper">
 	<nav class="main-nav-outer animated drop" id="site-nav"><!--main-nav-start-->
 		    <ul class="main-nav">
-		        <li class="small-logo"><a href="https://nusgreyhats.github.io/write-ups/../#header"><img src="https://nusgreyhats.github.io/write-ups/images/icon.png" alt=""></a></li>
-		        <li><a href="https://nusgreyhats.github.io/write-ups/">Write Ups</a></li>
-		        <li><a href="https://nusgreyhats.github.io/write-ups/../#security-wednesdays">Security Wednesdays</a></li>
-		        <li><a href="https://nusgreyhats.github.io/write-ups/../#the-ctf">The CTF</a></li>
-		        <li><a href="https://nusgreyhats.github.io/write-ups/../#team">Team</a></li>
-		        <li><a href="https://nusgreyhats.github.io/write-ups/../#contact">Contact</a></li>
+		        <li class="small-logo"><a href="https://nusgreyhats.org/write-ups/../#header"><img src="https://nusgreyhats.org/write-ups/images/icon.png" alt=""></a></li>
+		        <li><a href="https://nusgreyhats.org/write-ups/">Write Ups</a></li>
+		        <li><a href="https://nusgreyhats.org/write-ups/../#security-wednesdays">Security Wednesdays</a></li>
+		        <li><a href="https://nusgreyhats.org/write-ups/../#the-ctf">The CTF</a></li>
+		        <li><a href="https://nusgreyhats.org/write-ups/../#team">Team</a></li>
+		        <li><a href="https://nusgreyhats.org/write-ups/../#contact">Contact</a></li>
 
 		        
 		        <li class="social">
@@ -108,7 +108,7 @@
     
     <div class="entry-wrapper">
       <header class="entry-header">
-        <span class="entry-tags"><a href="https://nusgreyhats.github.io/write-ups/tags/#CTF" title="Pages tagged CTF">CTF</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.github.io/write-ups/tags/#CRYPTO" title="Pages tagged CRYPTO">CRYPTO</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.github.io/write-ups/tags/#HITCON" title="Pages tagged HITCON">HITCON</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.github.io/write-ups/tags/#AES" title="Pages tagged AES">AES</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.github.io/write-ups/tags/#CFB" title="Pages tagged CFB">CFB</a></span>
+        <span class="entry-tags"><a href="https://nusgreyhats.org/write-ups/tags/#CTF" title="Pages tagged CTF">CTF</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.org/write-ups/tags/#CRYPTO" title="Pages tagged CRYPTO">CRYPTO</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.org/write-ups/tags/#HITCON" title="Pages tagged HITCON">HITCON</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.org/write-ups/tags/#AES" title="Pages tagged AES">AES</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.org/write-ups/tags/#CFB" title="Pages tagged CFB">CFB</a></span>
         
           <h1 class="entry-title">HITCON CTF Quals 2015 - Simple (Crypto 100)</h1>
         
@@ -128,20 +128,20 @@
           
         
         
-          <img src="https://nusgreyhats.github.io/write-ups/images/bio-photo.jpg" class="bio-photo" alt="Quan Yang bio photo"></a>
+          <img src="https://nusgreyhats.org/write-ups/images/bio-photo.jpg" class="bio-photo" alt="Quan Yang bio photo"></a>
         
         <span class="author vcard">By <span class="fn">Quan Yang</span></span>
         <span class="entry-date date published"><time datetime="2015-10-19T00:00:00+08:00"><i class="fa fa-calendar-o"></i> October 19, 2015</time></span>
         
         <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>
         <span class="social-share-twitter">
-  <a href="https://twitter.com/intent/tweet?hashtags=CTF,CRYPTO,HITCON,AES,CFB&amp;text=HITCON%20CTF%20Quals%202015%20-%20Simple%20(Crypto%20100)&amp;url=https://nusgreyhats.github.io/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/&amp;via=https://twitter.com/quanyang" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+  <a href="https://twitter.com/intent/tweet?hashtags=CTF,CRYPTO,HITCON,AES,CFB&amp;text=HITCON%20CTF%20Quals%202015%20-%20Simple%20(Crypto%20100)&amp;url=https://nusgreyhats.org/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/&amp;via=https://twitter.com/quanyang" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
 </span>
 <span class="social-share-facebook">
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://nusgreyhats.github.io/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://nusgreyhats.org/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
 </span>
 <span class="social-share-googleplus">
-  <a href="https://plus.google.com/share?url=https://nusgreyhats.github.io/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+  <a href="https://plus.google.com/share?url=https://nusgreyhats.org/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
 </span>
 <!-- /.social-share -->
         
@@ -156,7 +156,7 @@
 <strong>Description</strong>
 Become admin!<br />
 <a href="http://52.69.244.164:51913">http://52.69.244.164:51913</a><br />
-<a href="https://nusgreyhats.github.io/write-ups/resources/files/hitcon/simple/simple-01018f60e497b8180d6c92237e2b3a67.rb">simple-01018f60e497b8180d6c92237e2b3a67.rb</a><br />
+<a href="https://nusgreyhats.org/write-ups/resources/files/hitcon/simple/simple-01018f60e497b8180d6c92237e2b3a67.rb">simple-01018f60e497b8180d6c92237e2b3a67.rb</a><br />
 <strong>md5</strong>: 4bd00c892d5e71f6d1d25d0bff2f49ec</p>
 </blockquote>
 
@@ -292,7 +292,7 @@ if __name__ == &quot;__main__&quot;:
     main()</code></pre></div>
 
 <p>Running the script gives us:
-<img src="https://nusgreyhats.github.io/write-ups/resources/images/hitcon/simple/flag.png" alt="" /></p>
+<img src="https://nusgreyhats.org/write-ups/resources/images/hitcon/simple/flag.png" alt="" /></p>
 
 <p>And we have our flag: <strong>hitcon{WoW_CFB_m0dE_5o_eAsY}</strong></p>
 
@@ -315,10 +315,10 @@ if __name__ == &quot;__main__&quot;:
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
       
-        <a href="https://nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/" class="btn" title="ASIS CTF Finals 2015 - Ultra Compression (Web 125)">Previous</a>
+        <a href="https://nusgreyhats.org/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/" class="btn" title="ASIS CTF Finals 2015 - Ultra Compression (Web 125)">Previous</a>
       
       
-        <a href="https://nusgreyhats.github.io/write-ups/32C3-CTF-Flash-(Reversing-300)/" class="btn" title="32C3 CTF - Flash (Reversing 300)">Next</a>
+        <a href="https://nusgreyhats.org/write-ups/32C3-CTF-Flash-(Reversing-300)/" class="btn" title="32C3 CTF - Flash (Reversing 300)">Next</a>
       
     </nav><!-- /.pagination -->
   </article>
@@ -341,7 +341,7 @@ if __name__ == &quot;__main__&quot;:
 			
 			
 			
-			<a href="https://nusgreyhats.github.io/write-ups/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+			<a href="https://nusgreyhats.org/write-ups/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
 		</div><!-- /.social-icons -->
 		<!--Copyright © 2014 Knight Theme By <a href="#">W3Goods</a>.-->
 	</div>
@@ -349,11 +349,11 @@ if __name__ == &quot;__main__&quot;:
 
 
 <script type="text/javascript">
-  var BASE_URL = 'https://nusgreyhats.github.io/write-ups';
+  var BASE_URL = 'https://nusgreyhats.org/write-ups';
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://nusgreyhats.github.io/write-ups/assets/js/scripts.min.js"></script>
+<script src="https://nusgreyhats.org/write-ups/assets/js/scripts.min.js"></script>
 
 
 <!-- Asynchronous Google Analytics snippet -->

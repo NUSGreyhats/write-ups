@@ -18,29 +18,29 @@
 
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://nusgreyhats.github.io/write-ups/images/icon.png">
+<meta name="twitter:image" content="https://nusgreyhats.org/write-ups/images/icon.png">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ASIS CTF Finals 2015 - Ultra Compression (Web 125)">
 <meta property="og:description" content="ASIS CTF Finals 2015 Web 125. Ultra Compression Service.">
-<meta property="og:url" content="https://nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/">
+<meta property="og:url" content="https://nusgreyhats.org/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/">
 <meta property="og:site_name" content="NUS Greyhats">
 
 
 
 
 
-<link rel="canonical" href="https://nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/">
-<link href="https://nusgreyhats.github.io/write-ups/feed.xml" type="application/atom+xml" rel="alternate" title="NUS Greyhats Feed">
+<link rel="canonical" href="https://nusgreyhats.org/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/">
+<link href="https://nusgreyhats.org/write-ups/feed.xml" type="application/atom+xml" rel="alternate" title="NUS Greyhats Feed">
 
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="https://nusgreyhats.github.io/write-ups/assets/css/main.css">
+<link rel="stylesheet" href="https://nusgreyhats.org/write-ups/assets/css/main.css">
 <!-- Webfonts -->
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
@@ -49,13 +49,13 @@
 
 <!-- HTML5 Shiv and Media Query Support -->
 <!--[if lt IE 9]>
-  <script src="https://nusgreyhats.github.io/write-ups/assets/js/vendor/html5shiv.min.js"></script>
-  <script src="https://nusgreyhats.github.io/write-ups/assets/js/vendor/respond.min.js"></script>
+  <script src="https://nusgreyhats.org/write-ups/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="https://nusgreyhats.org/write-ups/assets/js/vendor/respond.min.js"></script>
 <![endif]-->
 
 <!-- Modernizr -->
-<link href="https://nusgreyhats.github.io/write-ups/assets/css/font-awesome.css" rel="stylesheet" type="text/css">
-<script src="https://nusgreyhats.github.io/write-ups/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+<link href="https://nusgreyhats.org/write-ups/assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<script src="https://nusgreyhats.org/write-ups/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
 
 
 <!-- MathJax -->
@@ -64,17 +64,17 @@
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="https://nusgreyhats.github.io/write-ups/favicon.ico">
+<link rel="shortcut icon" href="https://nusgreyhats.org/write-ups/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="https://nusgreyhats.github.io/write-ups/favicon.png">
+<link rel="shortcut icon" href="https://nusgreyhats.org/write-ups/favicon.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="https://nusgreyhats.github.io/write-ups/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="https://nusgreyhats.org/write-ups/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://nusgreyhats.github.io/write-ups/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://nusgreyhats.org/write-ups/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://nusgreyhats.github.io/write-ups/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://nusgreyhats.org/write-ups/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://nusgreyhats.github.io/write-ups/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://nusgreyhats.org/write-ups/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
 
@@ -83,12 +83,12 @@
 <div class="navigation-wrapper">
 	<nav class="main-nav-outer animated drop" id="site-nav"><!--main-nav-start-->
 		    <ul class="main-nav">
-		        <li class="small-logo"><a href="https://nusgreyhats.github.io/write-ups/../#header"><img src="https://nusgreyhats.github.io/write-ups/images/icon.png" alt=""></a></li>
-		        <li><a href="https://nusgreyhats.github.io/write-ups/">Write Ups</a></li>
-		        <li><a href="https://nusgreyhats.github.io/write-ups/../#security-wednesdays">Security Wednesdays</a></li>
-		        <li><a href="https://nusgreyhats.github.io/write-ups/../#the-ctf">The CTF</a></li>
-		        <li><a href="https://nusgreyhats.github.io/write-ups/../#team">Team</a></li>
-		        <li><a href="https://nusgreyhats.github.io/write-ups/../#contact">Contact</a></li>
+		        <li class="small-logo"><a href="https://nusgreyhats.org/write-ups/../#header"><img src="https://nusgreyhats.org/write-ups/images/icon.png" alt=""></a></li>
+		        <li><a href="https://nusgreyhats.org/write-ups/">Write Ups</a></li>
+		        <li><a href="https://nusgreyhats.org/write-ups/../#security-wednesdays">Security Wednesdays</a></li>
+		        <li><a href="https://nusgreyhats.org/write-ups/../#the-ctf">The CTF</a></li>
+		        <li><a href="https://nusgreyhats.org/write-ups/../#team">Team</a></li>
+		        <li><a href="https://nusgreyhats.org/write-ups/../#contact">Contact</a></li>
 
 		        
 		        <li class="social">
@@ -108,7 +108,7 @@
     
     <div class="entry-wrapper">
       <header class="entry-header">
-        <span class="entry-tags"><a href="https://nusgreyhats.github.io/write-ups/tags/#CTF" title="Pages tagged CTF">CTF</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.github.io/write-ups/tags/#WEB" title="Pages tagged WEB">WEB</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.github.io/write-ups/tags/#ASIS" title="Pages tagged ASIS">ASIS</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.github.io/write-ups/tags/#INJECTION" title="Pages tagged INJECTION">INJECTION</a></span>
+        <span class="entry-tags"><a href="https://nusgreyhats.org/write-ups/tags/#CTF" title="Pages tagged CTF">CTF</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.org/write-ups/tags/#WEB" title="Pages tagged WEB">WEB</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.org/write-ups/tags/#ASIS" title="Pages tagged ASIS">ASIS</a>&nbsp;&bull;&nbsp;<a href="https://nusgreyhats.org/write-ups/tags/#INJECTION" title="Pages tagged INJECTION">INJECTION</a></span>
         
           <h1 class="entry-title">ASIS CTF Finals 2015 - Ultra Compression (Web 125)</h1>
         
@@ -128,20 +128,20 @@
           
         
         
-          <img src="https://nusgreyhats.github.io/write-ups/images/bio-photo.jpg" class="bio-photo" alt="Quan Yang bio photo"></a>
+          <img src="https://nusgreyhats.org/write-ups/images/bio-photo.jpg" class="bio-photo" alt="Quan Yang bio photo"></a>
         
         <span class="author vcard">By <span class="fn">Quan Yang</span></span>
         <span class="entry-date date published"><time datetime="2015-10-12T00:00:00+08:00"><i class="fa fa-calendar-o"></i> October 12, 2015</time></span>
         
         <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>
         <span class="social-share-twitter">
-  <a href="https://twitter.com/intent/tweet?hashtags=CTF,WEB,ASIS,INJECTION&amp;text=ASIS%20CTF%20Finals%202015%20-%20Ultra%20Compression%20(Web%20125)&amp;url=https://nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/&amp;via=https://twitter.com/quanyang" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+  <a href="https://twitter.com/intent/tweet?hashtags=CTF,WEB,ASIS,INJECTION&amp;text=ASIS%20CTF%20Finals%202015%20-%20Ultra%20Compression%20(Web%20125)&amp;url=https://nusgreyhats.org/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/&amp;via=https://twitter.com/quanyang" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
 </span>
 <span class="social-share-facebook">
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://nusgreyhats.org/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
 </span>
 <span class="social-share-googleplus">
-  <a href="https://plus.google.com/share?url=https://nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+  <a href="https://plus.google.com/share?url=https://nusgreyhats.org/write-ups/ASISCTF-Final-2015-Ultra-Compression-(Web-125)/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
 </span>
 <!-- /.social-share -->
         
@@ -161,12 +161,12 @@
 
 <p>Here we were told to go to a webpage to find the flag. Going to the webpage shows an ultra compression service with the ability to upload files.</p>
 
-<p><img src="https://nusgreyhats.github.io/write-ups/resources/images/asis/ucs/service.png" alt="" height="auto" width="600px" /></p>
+<p><img src="https://nusgreyhats.org/write-ups/resources/images/asis/ucs/service.png" alt="" height="auto" width="600px" /></p>
 
 <p>First thing to do is to upload a legitimate file!
 I chose a random image file on my machine to upload.</p>
 
-<p><img src="https://nusgreyhats.github.io/write-ups/resources/images/asis/ucs/upload.png" alt="" height="300px" width="300px" /></p>
+<p><img src="https://nusgreyhats.org/write-ups/resources/images/asis/ucs/upload.png" alt="" height="300px" width="300px" /></p>
 
 <p>By viewing all embeded javascript, we can tell that the file is sent using ajax to the uploader php script.</p>
 
@@ -196,7 +196,7 @@ success: function(data)   // A function to be called if request succeeds
 
 <p>Using the Chrome browser’s developer tool, we can inspect the response of the ajax call.</p>
 
-<p><img src="https://nusgreyhats.github.io/write-ups/resources/images/asis/ucs/crypt.png" alt="" height="300px" width="auto" /></p>
+<p><img src="https://nusgreyhats.org/write-ups/resources/images/asis/ucs/crypt.png" alt="" height="300px" width="auto" /></p>
 
 <p>As you can see, the filename
 <code>Screen Shot 2015-10-11 at 00.40.02.png</code>
@@ -209,7 +209,7 @@ gets encrypted to
 <code>plain = ".0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"</code></p>
 
 <p>Attempting to insert a semi-colon into the filename shows that the field was injectable.
-<img src="https://nusgreyhats.github.io/write-ups/resources/images/asis/ucs/injection.png" alt="" height="200px" width="auto" /></p>
+<img src="https://nusgreyhats.org/write-ups/resources/images/asis/ucs/injection.png" alt="" height="200px" width="auto" /></p>
 
 <p>Using a python script to automatically map payload back to their corresponding plaintext, we can then inject commands to the website.</p>
 
@@ -244,7 +244,7 @@ print out</code></pre></div>
 
 <p>Traversing to /home/asis/, we can then do a ls to see that the flag.txt is kept there. Finally, using a cat command, we can obtain the flag!</p>
 
-<p><img src="https://nusgreyhats.github.io/write-ups/resources/images/asis/ucs/flag.png" alt="" height="200px" width="auto" /></p>
+<p><img src="https://nusgreyhats.org/write-ups/resources/images/asis/ucs/flag.png" alt="" height="200px" width="auto" /></p>
 
 <p>And we have our flag: <strong>ASIS{72a126946e40f67a04d926dd4786ff15}</strong></p>
 
@@ -267,10 +267,10 @@ print out</code></pre></div>
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
       
-        <a href="https://nusgreyhats.github.io/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/" class="btn" title="ASIS CTF Finals 2015 - Big Lie (Forensics 100)">Previous</a>
+        <a href="https://nusgreyhats.org/write-ups/ASISCTF-Final-2015-Big-Lie-(Forensics-100)/" class="btn" title="ASIS CTF Finals 2015 - Big Lie (Forensics 100)">Previous</a>
       
       
-        <a href="https://nusgreyhats.github.io/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/" class="btn" title="HITCON CTF Quals 2015 - Simple (Crypto 100)">Next</a>
+        <a href="https://nusgreyhats.org/write-ups/HITCONCTF-Quals-2015-Simple-(Crypto-100)/" class="btn" title="HITCON CTF Quals 2015 - Simple (Crypto 100)">Next</a>
       
     </nav><!-- /.pagination -->
   </article>
@@ -293,7 +293,7 @@ print out</code></pre></div>
 			
 			
 			
-			<a href="https://nusgreyhats.github.io/write-ups/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+			<a href="https://nusgreyhats.org/write-ups/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
 		</div><!-- /.social-icons -->
 		<!--Copyright © 2014 Knight Theme By <a href="#">W3Goods</a>.-->
 	</div>
@@ -301,11 +301,11 @@ print out</code></pre></div>
 
 
 <script type="text/javascript">
-  var BASE_URL = 'https://nusgreyhats.github.io/write-ups';
+  var BASE_URL = 'https://nusgreyhats.org/write-ups';
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://nusgreyhats.github.io/write-ups/assets/js/scripts.min.js"></script>
+<script src="https://nusgreyhats.org/write-ups/assets/js/scripts.min.js"></script>
 
 
 <!-- Asynchronous Google Analytics snippet -->
