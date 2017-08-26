@@ -21,12 +21,6 @@
   email: quanyang@nusgreyhats.org
 
 - junhao:
-  id: junhao
-  name: Tan Jun Hao
-  avatar: bio-photo.jpg
-  bio: czNjdXJJdHkgTjFuamE=
-
-- amon:
     id: amon
     name: Jeremy Heng
     avatar: bio-photo.jpg
@@ -34,3 +28,11 @@
     twitter: https://twitter.com/nn_amon
     email: amon@nandynarwhals.org
     bio: Pirate of the Seven Proxseas
+
+- junhao:
+  id: junhao
+  name: Tan Jun Hao
+  avatar: bio-photo.jpg
+  bio: czNjdXJJdHkgTjFuamE=
+
+
