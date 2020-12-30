@@ -1,2 +1,4 @@
 _site/*
-resources/images/asis/.DS_Store
+
+# Others
+.DS_Store
